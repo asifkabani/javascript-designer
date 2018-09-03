@@ -1,6 +1,6 @@
 # JavaScript Designer
 
-Personal blog made using Gatsby.
+JavaScript Designer is a personal blog site of Asif Kabani.
 
 <!-- <p align="center">
   <a href="https://next.gatsbyjs.org">
