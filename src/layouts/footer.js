@@ -13,8 +13,6 @@ const PinkBar = styled.hr`
   border-radius: 30px;
 `;
 
-const year = new Date();
-
 export default () => (
     <Footer>
         <PinkBar />
