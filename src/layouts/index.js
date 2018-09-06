@@ -1,17 +1,9 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import Header from '../layouts/header';
-import Footer from '../layouts/footer';
-import styled from 'styled-components';
-import './index.css'
-
-const Content = styled.section`
-  margin: 0 auto;
-  max-width: 960px;
-  padding: 1rem;
-  padding-top: 0;
-`;
+import Header from './header';
+import Footer from './footer';
+import { Content } from './basecss';
 
 const Layout = ({ children, data }) => (
   <div>

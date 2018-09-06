@@ -13,5 +13,14 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Josefin Sans`,
+          `Mr Dafoe`
+        ]
+      }
+    },
   ],
 }
