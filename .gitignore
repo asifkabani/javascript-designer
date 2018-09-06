@@ -7,5 +7,6 @@ yarn-error.log
 /public
 /src/components
 /src/pages
+/src/posts
 /src/templates
 .DS_Store
