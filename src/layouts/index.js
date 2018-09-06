@@ -15,7 +15,7 @@ const Layout = ({ children, data }) => (
       ]}
     />
     <Header />
-    <div
+    <section
       style={{
         margin: '0 auto',
         maxWidth: 960,
@@ -24,7 +24,7 @@ const Layout = ({ children, data }) => (
       }}
     >
       {children()}
-    </div>
+    </section>
     <Footer />
   </div>
 )
