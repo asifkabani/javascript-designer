@@ -14,12 +14,11 @@ const Category = styled.p`
   color: #BABABA;
   font-size: 18px;
   font-weight: 400;
-  display: inline;
 `;
 
 const Date = styled.p`
   color: #999;
-  display: inline;
+  margin-top: -10px;
 `;
 
 const Headline = styled.h2`
@@ -42,13 +41,13 @@ export default ({ data }) => {
                 <Category>
                   {node.frontmatter.category}
                 </Category>
-                <Date>
-                  {node.frontmatter.date}
-                </Date>
               </div>
               <Headline>
                 {node.frontmatter.title}
               </Headline>
+              <Date>
+                  {node.frontmatter.date}
+              </Date>
               <Excerpt>
                 {node.excerpt}
               </Excerpt>
