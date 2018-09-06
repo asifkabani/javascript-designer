@@ -3,7 +3,15 @@ import Helmet from 'react-helmet';
 
 import Header from '../layouts/header';
 import Footer from '../layouts/footer';
+import styled from 'styled-components';
 import './index.css'
+
+const Content = styled.section`
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 1rem;
+  padding-top: 0;
+`;
 
 const Layout = ({ children, data }) => (
   <div>
@@ -12,24 +20,16 @@ const Layout = ({ children, data }) => (
       meta={[
         { name: 'description', content: 'Sample' },
         { name: 'keywords', content: 'sample, something' },
-      ]}
-    />
+      ]}/>
     <Header />
-    <section
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1rem',
-        paddingTop: 0,
-      }}
-    >
+    <Content>
       {children()}
-    </section>
+    </Content>
     <Footer />
   </div>
-)
+);
 
-export default Layout
+export default Layout;
 
 export const query = graphql`
   query LayoutQuery {

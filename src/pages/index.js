@@ -10,6 +10,12 @@ const Post = styled.div`
   font-family: 'Josefin Sans';
 `;
 
+const Content = styled.main`
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(autofit, minmax(200px, 1fr));
+`;
+
 const Category = styled.p`
   color: #BABABA;
   font-size: 18px;
@@ -32,7 +38,7 @@ const Excerpt = styled.p`
 
 export default ({ data }) => {
   return (
-    <main style={{ display: 'grid', gridGap: '30px', gridTemplateColumns: 'repeat(autofit, minmax(200px, 1fr))'}}>
+    <Content>
       {data.allMarkdownRemark.edges.map(({ node }) =>
         <article key={node.id}>
           <Link to={node.fields.slug} style={{ textDecoration: 'none' }}>
@@ -55,7 +61,7 @@ export default ({ data }) => {
           </Link>
         </article>
       )}
-    </main>
+    </Content>
   );
 }
 

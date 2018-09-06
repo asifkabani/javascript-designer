@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 const Footer = styled.footer`
     background-color: #FFE200;
+    font-family: 'Josefin Sans';
+    text-align: center;
 `;
 
 const PinkBar = styled.hr`
@@ -16,6 +18,6 @@ const PinkBar = styled.hr`
 export default () => (
     <Footer>
         <PinkBar />
-        <small>Copyright 2018</small>
+        <small>JavaScript Designer<br />© Copyright 2018. All Rights Reserved.</small>
     </Footer>
 );
