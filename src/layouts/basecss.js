@@ -1,7 +1,6 @@
 import React from 'react';
 import normalize from 'styled-normalize';
-import styled, { ThemeProvider, injectGlobal } from 'styled-components';
-import theme from 'styled-theming';
+import styled, { injectGlobal } from 'styled-components';
 
 injectGlobal`
   ${normalize}
@@ -12,7 +11,26 @@ export const Header = styled.header`
   text-align: center;
   color: #E83F6F;
   font-family: "Josefin Sans";
-  padding-top: 20px;
+  padding-top: 50px;
+`;
+
+export const Main = styled.h1`
+  text-decoration: 'none';
+  color: #E83F6F;
+  font-family: 'Josefin Sans';
+  font-size: 50px;
+  display: inline;
+  line-height: 0.7;
+`;
+
+export const Secondary = styled.span`
+  display: inline-block;
+  font-family: 'Mr Dafoe';
+  font-size: 50px;
+  color: #FFFFFF;
+  font-weight: 100;
+  line-height: 0.3;
+  padding-bottom: 20px;
 `;
 
 export const PinkBar = styled.hr`

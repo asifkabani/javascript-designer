@@ -4,6 +4,8 @@ import { Footer, PinkBar } from '../layouts/basecss';
 export default () => (
     <Footer>
         <PinkBar footer />
-        <small>JavaScript Designer<br />© Copyright 2018. All Rights Reserved.</small>
+        <small style={{ display: 'inline-block', padding: '20px 0' }}>
+            JavaScript Designer<br />© Copyright 2018. All Rights Reserved.
+        </small>
     </Footer>
 );
