@@ -1,12 +1,15 @@
 import React from 'react';
+import { Category, Date, Headline, Content, Excerpt } from '../layouts/basecss';
 
 export default ({ data }) => {
   const post = data.markdownRemark;
   return (
-    <div>
-      <h1>{post.frontmatter.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
-    </div>
+    <Content>
+      <Headline>{post.frontmatter.title}</Headline>
+      <Category>{post.frontmatter.category}</Category>
+      <Date>{post.frontmatter.date}</Date>
+      <Excerpt dangerouslySetInnerHTML={{ __html: post.html }} />
+    </Content>
   );
 };
 
@@ -16,6 +19,8 @@ export const query = graphql`
       html
       frontmatter {
         title
+        category
+        date
       }
     }
   }

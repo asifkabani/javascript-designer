@@ -5,7 +5,7 @@ export default () => (
   <a href="/" style={{ textDecoration: 'none' }}>
     <Main>
       JavaScript<br/>
-      <Secondary>Designer</Secondary>
+      <Secondary secondary>Designer</Secondary>
     </Main>
   </a>
 );

@@ -6,18 +6,20 @@ injectGlobal`
   ${normalize}
 `;
 
+// Theme is located at src/layouts/index.js
+
 export const Header = styled.header`
-  background-color: #FFE200;
+  background-color: ${props => props.theme.yellow};
   text-align: center;
-  color: #E83F6F;
-  font-family: "Josefin Sans";
+  color: ${props => props.theme.pink};
+  font-family: ${props => props.theme.font};
   padding-top: 50px;
 `;
 
 export const Main = styled.h1`
   text-decoration: 'none';
-  color: #E83F6F;
-  font-family: 'Josefin Sans';
+  color:${props => props.theme.pink};
+  font-family: ${props => props.theme.font};
   font-size: 50px;
   display: inline;
   line-height: 0.7;
@@ -25,7 +27,7 @@ export const Main = styled.h1`
 
 export const Secondary = styled.span`
   display: inline-block;
-  font-family: 'Mr Dafoe';
+  font-family: ${props => props.secondary ? 'Mr Dafoe' : props.theme.font};
   font-size: 50px;
   color: #FFFFFF;
   font-weight: 100;
@@ -34,7 +36,7 @@ export const Secondary = styled.span`
 `;
 
 export const PinkBar = styled.hr`
-  background-color: #E83F6F;
+  background-color: ${props => props.theme.pink};
   height: 5px;
   border-radius: 30px 30px 0 0;
   border: 0;
@@ -47,6 +49,9 @@ export const Content = styled.section`
   max-width: 960px;
   padding: 1rem;
   padding-top: 0;
+  font-family: ${props => props.theme.font};
+  width: 100%;
+  height: 100%;
 `;
 
 export const Post = styled.div`
@@ -54,7 +59,7 @@ export const Post = styled.div`
   border-radius: 15px;
   box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
   padding: 50px;
-  font-family: 'Josefin Sans';
+  font-family: ${props => props.theme.font};
 `;
 
 export const ArticleContent = styled.main`
@@ -71,20 +76,22 @@ export const Category = styled.p`
 
 export const Date = styled.p`
   color: #999;
-  margin-top: -10px;
 `;
 
 export const Headline = styled.h2`
   color: #676767;
-  font-family: 'Josefin Sans';
+  font-family: ${props => props.theme.font};
+  font-size: 30px;
 `;
 
 export const Excerpt = styled.p`
   color: #999;
+  font-size: 22px;
+  line-height: 1.5;
 `;
 
 export const Footer = styled.footer`
-    background-color: #FFE200;
-    font-family: 'Josefin Sans';
+    background-color: ${props => props.theme.yellow};
+    font-family: ${props => props.theme.font};
     text-align: center;
 `;

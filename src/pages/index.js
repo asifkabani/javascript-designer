@@ -10,20 +10,10 @@ export default ({ data }) => {
         <article key={node.id}>
           <Link to={node.fields.slug} style={{ textDecoration: 'none' }}>
             <Post>
-              <div>
-                <Category>
-                  {node.frontmatter.category}
-                </Category>
-              </div>
-              <Headline>
-                {node.frontmatter.title}
-              </Headline>
-              <Date>
-                  {node.frontmatter.date}
-              </Date>
-              <Excerpt>
-                {node.excerpt}
-              </Excerpt>
+              <Category>{node.frontmatter.category}</Category>
+              <Headline>{node.frontmatter.title}</Headline>
+              <Date>{node.frontmatter.date}</Date>
+              <Excerpt>{node.excerpt}</Excerpt>
             </Post>
           </Link>
         </article>
