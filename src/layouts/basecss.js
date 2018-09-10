@@ -13,22 +13,21 @@ export const Header = styled.header`
   text-align: center;
   color: ${props => props.theme.pink};
   font-family: ${props => props.theme.font};
-  padding-top: 50px;
 `;
 
 export const Main = styled.h1`
   text-decoration: 'none';
   color:${props => props.theme.pink};
   font-family: ${props => props.theme.font};
-  font-size: 50px;
-  display: inline;
+  font-size: 4.45em;
+  display: inline-block;
   line-height: 0.7;
 `;
 
 export const Secondary = styled.span`
   display: inline-block;
   font-family: ${props => props.secondary ? 'Mr Dafoe' : props.theme.font};
-  font-size: 50px;
+  font-size: 0.95em;
   color: #FFFFFF;
   font-weight: 100;
   line-height: 0.3;
@@ -47,19 +46,20 @@ export const PinkBar = styled.hr`
 export const Content = styled.section`
   margin: 0 auto;
   max-width: 960px;
-  padding: 1rem;
-  padding-top: 0;
+  padding: 2em;
   font-family: ${props => props.theme.font};
-  width: 100%;
-  height: 100%;
 `;
 
-export const Post = styled.div`
+export const Box = styled.article`
   background-color: #FFFFFF;
   border-radius: 15px;
   box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
   padding: 50px;
   font-family: ${props => props.theme.font};
+  transition: box-shadow 0.5s;
+  &:hover {
+    box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.3);
+  }
 `;
 
 export const ArticleContent = styled.main`
@@ -88,6 +88,23 @@ export const Excerpt = styled.p`
   color: #999;
   font-size: 22px;
   line-height: 1.5;
+`;
+
+export const More = styled.button`
+  border-color: ${props => props.theme.pink};
+  background-color: transparent;
+  color: ${props => props.theme.pink};
+  border-radius: 5px;
+  padding: 1em;
+  font-size: 1em;
+  margin-top: 1em;
+  &:hover {
+    background-color: ${props => props.theme.pink};
+    color: #FFF;
+  }
+  &::after {
+    content: " \\27F6";
+  }
 `;
 
 export const Footer = styled.footer`
