@@ -1,4 +1,3 @@
-import React from 'react';
 import normalize from 'styled-normalize';
 import styled, { injectGlobal } from 'styled-components';
 
@@ -37,9 +36,7 @@ export const Secondary = styled.span`
 export const PinkBar = styled.hr`
   background-color: ${props => props.theme.pink};
   height: 5px;
-  border-radius: 30px 30px 0 0;
   border: 0;
-  max-width: 960px;
   transform: ${props => props.footer ? 'rotate(180deg)' : 'none'};
 `;
 
@@ -50,16 +47,10 @@ export const Content = styled.section`
   font-family: ${props => props.theme.font};
 `;
 
-export const Box = styled.article`
-  background-color: #FFFFFF;
-  border-radius: 15px;
-  box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
-  padding: 50px;
-  font-family: ${props => props.theme.font};
-  transition: box-shadow 0.5s;
-  &:hover {
-    box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.3);
-  }
+export const Footer = styled.footer`
+    background-color: ${props => props.theme.yellow};
+    font-family: ${props => props.theme.font};
+    text-align: center;
 `;
 
 export const ArticleContent = styled.main`
@@ -68,20 +59,35 @@ export const ArticleContent = styled.main`
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 `;
 
-export const Category = styled.p`
-  color: #BABABA;
-  font-size: 18px;
-  font-weight: 400;
+export const Box = styled.article`
+  background-color: #FFFFFF;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
+  /* padding: 50px; */
+  font-family: ${props => props.theme.font};
+  transition: box-shadow 0.5s;
+  &:hover {
+    box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.3);
+  }
 `;
 
-export const Date = styled.p`
-  color: #999;
+export const Category = styled.span`
+  color: #FFF;
+  font-size: 18px;
+  font-weight: 400;
+  display: block;
+  border-radius: 15px 15px 0 0;
+  padding: 1rem;
 `;
 
 export const Headline = styled.h2`
   color: #676767;
   font-family: ${props => props.theme.font};
   font-size: 30px;
+`;
+
+export const Date = styled.p`
+  color: #999;
 `;
 
 export const Excerpt = styled.p`
@@ -105,10 +111,4 @@ export const More = styled.button`
   &::after {
     content: " \\27F6";
   }
-`;
-
-export const Footer = styled.footer`
-    background-color: ${props => props.theme.yellow};
-    font-family: ${props => props.theme.font};
-    text-align: center;
 `;
