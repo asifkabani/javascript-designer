@@ -61,9 +61,8 @@ export const ArticleContent = styled.main`
 
 export const Box = styled.article`
   background-color: #FFFFFF;
-  border-radius: 0 0 15px 15px;
+  border-radius: 15px;
   box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
-  /* padding: 50px; */
   font-family: ${props => props.theme.font};
   transition: box-shadow 0.5s;
   &:hover {
