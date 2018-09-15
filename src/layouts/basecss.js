@@ -1,8 +1,10 @@
 import normalize from 'styled-normalize';
 import styled, { injectGlobal } from 'styled-components';
+import { fontAwesomeCss } from '@fortawesome/fontawesome-svg-core';
 
 injectGlobal`
   ${normalize}
+  ${fontAwesomeCss}
 `;
 
 // Theme is located at src/layouts/index.js
