@@ -2,6 +2,8 @@ import React from "react";
 import Link from "gatsby-link";
 import { Box, ArticleContent, Category, Date, Headline, Excerpt, More } from '../layouts/basecss';
 
+// Color label depending on blog cateogry.
+
 const createLabel = (category) => {
   let backgroundColor = '';
   switch (category) {

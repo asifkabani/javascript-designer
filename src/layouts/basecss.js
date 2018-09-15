@@ -10,6 +10,7 @@ injectGlobal`
 export const Header = styled.header`
   background-color: ${props => props.theme.yellow};
   text-align: center;
+  border-bottom: 5px solid #E83F6F;
   color: ${props => props.theme.pink};
   font-family: ${props => props.theme.font};
 `;
@@ -33,13 +34,6 @@ export const Secondary = styled.span`
   padding-bottom: 20px;
 `;
 
-export const PinkBar = styled.hr`
-  background-color: ${props => props.theme.pink};
-  height: 5px;
-  border: 0;
-  transform: ${props => props.footer ? 'rotate(180deg)' : 'none'};
-`;
-
 export const Content = styled.section`
   margin: 0 auto;
   max-width: 960px;
@@ -51,6 +45,10 @@ export const Footer = styled.footer`
     background-color: ${props => props.theme.yellow};
     font-family: ${props => props.theme.font};
     text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: 5px solid #E83F6F;
 `;
 
 export const ArticleContent = styled.main`
@@ -79,6 +77,10 @@ export const Category = styled.span`
   padding: 1rem;
 `;
 
+export const BlogCategory = styled.p`
+  color: grey;
+`;
+
 export const Headline = styled.h2`
   color: #676767;
   font-family: ${props => props.theme.font};
@@ -87,6 +89,7 @@ export const Headline = styled.h2`
 
 export const Date = styled.p`
   color: #999;
+  font-size: 18px;
 `;
 
 export const Excerpt = styled.p`
@@ -103,6 +106,7 @@ export const More = styled.button`
   padding: 1em;
   font-size: 1em;
   margin-top: 1em;
+  transition: all 0.5s;
   &:hover {
     background-color: ${props => props.theme.pink};
     color: #FFF;
