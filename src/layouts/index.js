@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components';
 
 import Header from './header';
 import Footer from './footer';
+import '@fortawesome/fontawesome-svg-core/styles.css'
 import { Content } from './basecss';
 
 
