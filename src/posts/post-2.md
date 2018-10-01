@@ -1,8 +1,8 @@
 ---
-title: Hello World
-date: "2018-09-05"
-category: HTML
-tags: ['hello', 'world']
+title: What is React Native?
+date: "2018-08-05"
+category: "JavaScript"
+tags: ['react', 'native']
 ---
 
-Do Pandas eat bananas? Check out this short video that shows that yes!
+Here we discuss exactly what React Native is about and it's uses.

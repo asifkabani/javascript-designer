@@ -8,7 +8,6 @@ injectGlobal`
 `;
 
 // Theme is located at src/layouts/index.js
-
 export const Header = styled.header`
   background-color: ${props => props.theme.yellow};
   text-align: center;

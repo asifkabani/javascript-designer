@@ -1,8 +1,8 @@
 ---
-title: Hello World
-date: "2018-09-05"
+title: New API's in HTML5
+date: "2018-05-30"
 category: HTML
-tags: ['hello', 'world']
+tags: ['HTML']
 ---
 
-Do Pandas eat bananas? Check out this short video that shows that yes!
+HTML5 includes some amazing API's, see how you can interact with them.
