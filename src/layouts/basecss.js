@@ -40,13 +40,13 @@ export const Content = styled.section`
   max-width: 960px;
   padding: 2em;
   font-family: ${props => props.theme.font};
+  min-height: calc(100vh - 275px);
 `;
 
 export const Footer = styled.footer`
     background-color: ${props => props.theme.yellow};
     font-family: ${props => props.theme.font};
     text-align: center;
-    height: 10vh;
     width: 100%;
     border-top: 5px solid #E83F6F;
 `;
