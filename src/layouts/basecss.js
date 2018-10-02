@@ -46,8 +46,7 @@ export const Footer = styled.footer`
     background-color: ${props => props.theme.yellow};
     font-family: ${props => props.theme.font};
     text-align: center;
-    position: absolute;
-    bottom: 0;
+    height: 10vh;
     width: 100%;
     border-top: 5px solid #E83F6F;
 `;
