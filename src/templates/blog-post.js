@@ -1,27 +1,32 @@
 import React from 'react';
-import { BlogCategory, Date, Headline, Content, Excerpt } from '../layouts/basecss';
+import {
+  BlogCategory,
+  Date,
+  Headline,
+  Excerpt
+} from '../layouts/basecss';
 
-export default ({ data }) => {
-  const post = data.markdownRemark;
-  return (
-    <div>
-      <Headline>{post.frontmatter.title}</Headline>
-      <BlogCategory>{post.frontmatter.category}</BlogCategory>
-      <Date>{post.frontmatter.date}</Date>
-      <Excerpt dangerouslySetInnerHTML={{ __html: post.html }} />
-    </div>
-  );
-};
-
-export const query = graphql`
-  query BlogPostQuery($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      frontmatter {
-        title
-        category
-        date(formatString: "MMMM DD, YYYY")
+export default () => {
+  <StaticQuery
+    query={graphql`
+      query BlogPostQuery($slug: String!) {
+        markdownRemark(fields: { slug: { eq: $slug } }) {
+          html
+          frontmatter {
+            title
+            category
+            date(formatString: "MMMM DD, YYYY")
+          }
+        }
       }
-    }
-  }
-`;
+    `}
+    render={data => (
+      <>
+        <Headline>{data.post.frontmatter.title}</Headline>
+        <BlogCategory>{data.post.frontmatter.category}</BlogCategory>
+        <Date>{data.post.frontmatter.date}</Date>
+        <Excerpt dangerouslySetInnerHTML={{ __html: data.post.html }} />
+      </>
+    )}
+  />
+};
