@@ -1,12 +1,13 @@
 import React from 'react';
+import { StaticQuery, graphql } from 'gatsby';
 import {
   BlogCategory,
   Date,
   Headline,
-  Excerpt
-} from '../layouts/basecss';
+  Excerpt,
+} from '../components/layouts/basecss';
 
-export default () => {
+export default () => (
   <StaticQuery
     query={graphql`
       query BlogPostQuery($slug: String!) {
@@ -29,4 +30,4 @@ export default () => {
       </>
     )}
   />
-};
+);

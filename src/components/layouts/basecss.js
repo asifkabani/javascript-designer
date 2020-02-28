@@ -1,24 +1,16 @@
-import normalize from 'styled-normalize';
-import styled, { injectGlobal } from 'styled-components';
-import { fontAwesomeCss } from '@fortawesome/fontawesome-svg-core';
+import styled from 'styled-components';
 
-injectGlobal`
-  ${normalize}
-  ${fontAwesomeCss}
-`;
-
-// Theme is located at src/layouts/index.js
 export const Header = styled.header`
-  background-color: ${props => props.theme.yellow};
+  background-color: ${props => props.theme.plum};
   text-align: center;
-  border-bottom: 5px solid #E83F6F;
-  color: ${props => props.theme.pink};
+  border-bottom: 5px solid ${props => props.theme.cyan};
+  color: #ffffff;
   font-family: ${props => props.theme.font};
 `;
 
 export const Main = styled.h1`
   text-decoration: 'none';
-  color:${props => props.theme.pink};
+  color: #ffffff;
   font-family: ${props => props.theme.font};
   font-size: 4.45em;
   display: inline-block;
@@ -27,9 +19,9 @@ export const Main = styled.h1`
 
 export const Secondary = styled.span`
   display: inline-block;
-  font-family: ${props => props.secondary ? 'Mr Dafoe' : props.theme.font};
+  font-family: ${props => (props.secondary ? 'Mr Dafoe' : props.theme.font)};
   font-size: 0.95em;
-  color: #FFFFFF;
+  color: ${props => props.theme.cyan};
   font-weight: 100;
   line-height: 0.3;
   padding-bottom: 20px;
@@ -37,28 +29,28 @@ export const Secondary = styled.span`
 
 export const Content = styled.section`
   margin: 0 auto;
-  max-width: 960px;
   padding: 2em;
   font-family: ${props => props.theme.font};
   min-height: calc(100vh - 275px);
 `;
 
 export const Footer = styled.footer`
-    background-color: ${props => props.theme.yellow};
-    font-family: ${props => props.theme.font};
-    text-align: center;
-    width: 100%;
-    border-top: 5px solid #E83F6F;
+  background-color: ${props => props.theme.plum};
+  color: #ffffff;
+  font-family: ${props => props.theme.font};
+  text-align: center;
+  width: 100%;
+  border-top: 5px solid ${props => props.theme.cyan};
 `;
 
 export const ArticleContent = styled.main`
   display: grid;
-  grid-gap: 50px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 `;
 
 export const Box = styled.article`
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 15px;
   box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
   font-family: ${props => props.theme.font};
@@ -69,7 +61,7 @@ export const Box = styled.article`
 `;
 
 export const Category = styled.span`
-  color: #FFF;
+  color: #fff;
   font-size: 18px;
   font-weight: 400;
   display: block;
@@ -78,7 +70,7 @@ export const Category = styled.span`
 `;
 
 export const BlogCategory = styled.p`
-  color: grey;
+  color: white;
 `;
 
 export const Headline = styled.h2`
@@ -108,10 +100,10 @@ export const More = styled.button`
   margin-top: 1em;
   transition: all 0.5s;
   &:hover {
-    background-color: ${props => props.theme.pink};
-    color: #FFF;
+    background-color: ${props => props.theme.red};
+    color: #fff;
   }
   &::after {
-    content: " \\27F6";
+    content: ' \\27F6';
   }
 `;
