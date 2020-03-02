@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 
 export const Header = styled.header`
-  background-color: ${props => props.theme.plum};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgb(152,36,117);
+  background: radial-gradient(circle, rgba(152,36,117,1) 0%, rgba(65,15,50,1) 100%);
   text-align: center;
   border-bottom: 5px solid ${props => props.theme.cyan};
   color: #ffffff;
@@ -10,18 +14,19 @@ export const Header = styled.header`
 
 export const Main = styled.h1`
   text-decoration: 'none';
-  color: #ffffff;
+  color: #D9CA00;
   font-family: ${props => props.theme.font};
   font-size: 4.45em;
   display: inline-block;
   line-height: 0.7;
+  margin: 0.5em 0;
 `;
 
 export const Secondary = styled.span`
   display: inline-block;
   font-family: ${props => (props.secondary ? 'Mr Dafoe' : props.theme.font)};
   font-size: 0.95em;
-  color: ${props => props.theme.cyan};
+  color: #FFF;
   font-weight: 100;
   line-height: 0.3;
   padding-bottom: 20px;
