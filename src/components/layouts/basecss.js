@@ -82,6 +82,7 @@ export const Headline = styled.h2`
   color: #676767;
   font-family: ${props => props.theme.font};
   font-size: 30px;
+  margin: 0;
 `;
 
 export const Date = styled.p`
