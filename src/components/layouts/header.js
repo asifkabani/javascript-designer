@@ -1,18 +1,20 @@
 import React from 'react'
 import Logo from '../Logo'
-import { Header } from '../layouts/basecss'
+import { Header, AuthorContainer } from '../layouts/basecss'
 import profilePicture from '../../../static/profile.jpeg';
 
 const Author = ({ src, name }) => (
-  <div>
-    <img style={{ borderRadius: '80px', width: '50px', height: '50px' }} src={src} alt={name} />
-    <p>{`Personal Blog of ${name} in Houston, TX.`}</p>
-  </div>
+  <>
+    <img style={{ borderRadius: '80px', width: '40px', height: '40px' }} src={src} alt={name} />
+    <p style={{ margin: 0, width: '150px', textAlign: 'left' }}>{`Personal Blog of ${name} in Houston, TX.`}</p>
+  </>
 )
 
 export default () => (
   <Header>
     <Logo />
-    <Author src={profilePicture} name="Asif Kabani" />
+    <AuthorContainer>
+      <Author src={profilePicture} name="Asif Kabani" />
+    </AuthorContainer>
   </Header>
 )

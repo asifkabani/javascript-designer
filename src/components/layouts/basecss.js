@@ -5,12 +5,21 @@ export const Header = styled.header`
   flex-direction: column;
   justify-content: center;
   background: rgb(152,36,117);
-  background: radial-gradient(circle, rgba(152,36,117,1) 0%, rgba(65,15,50,1) 100%);
+  background: ${props => `radial-gradient(circle, ${props.theme.lightPlum}, ${props.theme.darkPlum})`};
   text-align: center;
-  border-bottom: 5px solid ${props => props.theme.cyan};
+  border-bottom: 5px solid ${props => props.theme.lightPlum};
   color: #ffffff;
   font-family: ${props => props.theme.font};
 `;
+
+export const AuthorContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+  & img {
+    margin-right: 1rem;
+  }
+`
 
 export const Main = styled.h1`
   text-decoration: 'none';
@@ -40,12 +49,12 @@ export const Content = styled.section`
 `;
 
 export const Footer = styled.footer`
-  background-color: ${props => props.theme.plum};
+  background-color: ${props => props.theme.darkPlum};
   color: #ffffff;
   font-family: ${props => props.theme.font};
   text-align: center;
   width: 100%;
-  border-top: 5px solid ${props => props.theme.cyan};
+  border-top: 5px solid ${props => props.theme.lightPlum};
 `;
 
 export const ArticleContent = styled.main`
@@ -97,16 +106,16 @@ export const Excerpt = styled.p`
 `;
 
 export const More = styled.button`
-  border-color: ${props => props.theme.pink};
+  border-color: ${props => props.theme.lightPlum};
   background-color: transparent;
-  color: ${props => props.theme.pink};
+  color: ${props => props.theme.lightPlum};
   border-radius: 5px;
   padding: 1em;
   font-size: 1em;
   margin-top: 1em;
   transition: all 0.5s;
   &:hover {
-    background-color: ${props => props.theme.red};
+    background-color: ${props => props.theme.lightPlum};
     color: #fff;
   }
   &::after {

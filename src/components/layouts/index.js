@@ -17,10 +17,8 @@ const GlobalStyle = createGlobalStyle`
 
 const theme = {
   gray: '#4c4c4c',
-  turquoise: '#147087',
-  red: '#DF3C5B',
-  cyan: '#21ADBC',
-  plum: '#2F222B',
+  lightPlum: '#982475',
+  darkPlum: '#410f32',
   font: 'Josefin Sans, sans-serif',
 };
 
