@@ -1,5 +1,5 @@
 import React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import {
   BlogCategory,
   Date,
@@ -7,27 +7,26 @@ import {
   Excerpt,
 } from '../components/layouts/basecss';
 
-export default () => (
-  <StaticQuery
-    query={graphql`
-      query BlogPostQuery($slug: String!) {
-        markdownRemark(fields: { slug: { eq: $slug } }) {
-          html
-          frontmatter {
-            title
-            category
-            date(formatString: "MMMM DD, YYYY")
-          }
-        }
+export default ({ data }) => {
+  const post = data.markdownRemark
+
+  return (
+    <>
+      <Headline>{post.frontmatter.title}</Headline>
+      <BlogCategory>{post.frontmatter.category}</BlogCategory>
+      <Date>{post.frontmatter.date}</Date>
+      <Excerpt dangerouslySetInnerHTML={{ __html: post.html }} />
+    </>
+  )
+}
+
+export const query = graphql`
+  query($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      html
+      frontmatter {
+        title
       }
-    `}
-    render={data => (
-      <>
-        <Headline>{data.post.frontmatter.title}</Headline>
-        <BlogCategory>{data.post.frontmatter.category}</BlogCategory>
-        <Date>{data.post.frontmatter.date}</Date>
-        <Excerpt dangerouslySetInnerHTML={{ __html: data.post.html }} />
-      </>
-    )}
-  />
-);
+    }
+  }
+`
