@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from '../Logo'
+import Logo from '../logo'
 import { Header, AuthorContainer } from '../layouts/basecss'
 import profilePicture from '../../../static/profile.jpeg';
 

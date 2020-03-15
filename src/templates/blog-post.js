@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import Layout from '../components/layouts';
 import {
   BlogCategory,
   Date,
@@ -11,12 +12,12 @@ export default ({ data }) => {
   const post = data.markdownRemark
 
   return (
-    <>
+    <Layout>
       <Headline>{post.frontmatter.title}</Headline>
       <BlogCategory>{post.frontmatter.category}</BlogCategory>
       <Date>{post.frontmatter.date}</Date>
       <Excerpt dangerouslySetInnerHTML={{ __html: post.html }} />
-    </>
+    </Layout>
   )
 }
 

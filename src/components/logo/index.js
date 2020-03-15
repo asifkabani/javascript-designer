@@ -1,5 +1,5 @@
 import React from 'react'
-import { Main, Secondary } from '../components/layouts/basecss'
+import { Main, Secondary } from '../layouts/basecss'
 
 export default () => (
   <a href="/" style={{ textDecoration: 'none' }}>

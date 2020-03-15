@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import Layout from '../components/layouts';
 import {
-  Box,
+  Card,
   ArticleContent,
   Category,
   Date,
@@ -36,20 +36,20 @@ export default ({ data }) => {
     <Layout>
       <ArticleContent>
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <Box key={node.id}>
-            {createLabel(node.frontmatter.category)}
-            <div style={{ padding: 30 }}>
-              <Headline>{node.frontmatter.title}</Headline>
-              <Date>{node.frontmatter.date}</Date>
-              <Excerpt>{node.excerpt}</Excerpt>
-              <Link
-                to={node.fields.slug}
-                style={{ textDecoration: 'none' }}
-              >
-                <More>Read</More>
-              </Link>
-            </div>
-          </Box>
+          <Link
+            to={node.fields.slug}
+            style={{ textDecoration: 'none' }}
+          >
+            <Card key={node.id}>
+              {createLabel(node.frontmatter.category)}
+              <div style={{ padding: 30 }}>
+                <Headline>{node.frontmatter.title}</Headline>
+                <Date>{node.frontmatter.date}</Date>
+                <Excerpt>{node.excerpt}</Excerpt>
+                <More />
+              </div>
+            </Card>
+          </Link>
         ))}
       </ArticleContent>
     </Layout>

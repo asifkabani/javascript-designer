@@ -3,16 +3,13 @@ import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { Normalize } from 'styled-normalize';
-import { fontAwesomeCss } from '@fortawesome/fontawesome-svg-core';
 
 import Header from './header';
 import Footer from './footer';
-import '@fortawesome/fontawesome-svg-core/styles.css';
 import { Content } from './basecss';
 
 const GlobalStyle = createGlobalStyle`
   ${Normalize}
-  ${fontAwesomeCss}
 `;
 
 const theme = {

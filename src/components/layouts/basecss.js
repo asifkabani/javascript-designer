@@ -63,7 +63,7 @@ export const ArticleContent = styled.main`
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 `;
 
-export const Box = styled.article`
+export const Card = styled.article`
   background-color: #ffffff;
   border-radius: 15px;
   box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
@@ -105,20 +105,10 @@ export const Excerpt = styled.p`
   line-height: 1.5;
 `;
 
-export const More = styled.button`
-  border-color: ${props => props.theme.lightPlum};
-  background-color: transparent;
+export const More = styled.span`
   color: ${props => props.theme.lightPlum};
-  border-radius: 5px;
-  padding: 1em;
-  font-size: 1em;
-  margin-top: 1em;
-  transition: all 0.5s;
-  &:hover {
-    background-color: ${props => props.theme.lightPlum};
-    color: #fff;
-  }
+  font-size: 2em;
   &::after {
-    content: ' \\27F6';
+    content: '→';
   }
 `;
