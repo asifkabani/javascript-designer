@@ -1,5 +1,5 @@
-import React from 'react'
-import { Main, Secondary } from '../layouts/basecss'
+import React from 'react';
+import { Main, Secondary } from '../../layouts/basecss';
 
 export default () => (
   <a href="/" style={{ textDecoration: 'none' }}>
@@ -9,4 +9,4 @@ export default () => (
       <Secondary secondary>Designer</Secondary>
     </Main>
   </a>
-)
+);

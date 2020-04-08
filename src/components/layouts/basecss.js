@@ -4,8 +4,9 @@ export const Header = styled.header`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: rgb(152,36,117);
-  background: ${props => `radial-gradient(circle, ${props.theme.lightPlum}, ${props.theme.darkPlum})`};
+  background: rgb(152, 36, 117);
+  background: ${props =>
+    `radial-gradient(circle, ${props.theme.lightPlum}, ${props.theme.darkPlum})`};
   text-align: center;
   border-bottom: 5px solid ${props => props.theme.lightPlum};
   color: #ffffff;
@@ -18,12 +19,14 @@ export const AuthorContainer = styled.div`
   padding-bottom: 1rem;
   & img {
     margin-right: 1rem;
+    border-radius: 80px;
+    width: 40px;
   }
-`
+`;
 
 export const Main = styled.h1`
   text-decoration: 'none';
-  color: #D9CA00;
+  color: #d9ca00;
   font-family: ${props => props.theme.font};
   font-size: 4.45em;
   display: inline-block;
@@ -35,7 +38,7 @@ export const Secondary = styled.span`
   display: inline-block;
   font-family: ${props => (props.secondary ? 'Mr Dafoe' : props.theme.font)};
   font-size: 0.95em;
-  color: #FFF;
+  color: #fff;
   font-weight: 100;
   line-height: 0.3;
   padding-bottom: 20px;
