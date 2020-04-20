@@ -1,22 +1,21 @@
-import React from 'react';
-import { Category } from '../layouts/basecss';
-
 // Color label depending on blog cateogry.
 export function createLabel(category) {
   let backgroundColor = '';
   switch (category) {
     case 'HTML':
-      backgroundColor = '#E44D26';
+      backgroundColor = '#e34c26';
       break;
     case 'CSS':
-      backgroundColor = '#0070BA';
+      backgroundColor = '#006eba';
       break;
     case 'JavaScript':
-      backgroundColor = '#63A715';
+      backgroundColor = '#d6ba32';
       break;
 
     default:
+      backgroundColor = '#410f32';
       break;
   }
-  return <Category style={{ backgroundColor }}>{category}</Category>;
+
+  return backgroundColor;
 }

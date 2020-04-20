@@ -10,6 +10,5 @@ export default () => (
     <AuthorContainer>
       <Author src={profilePicture} name="Asif Kabani" />
     </AuthorContainer>
-    <div>Hello</div>
   </Header>
 );

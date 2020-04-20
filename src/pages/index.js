@@ -1,14 +1,16 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import Layout from '../components/layouts';
+import Layout from 'src/components/layouts';
 import {
   Card,
+  CategoryLabel,
+  CardContent,
   ArticleContent,
   Date,
   Headline,
   Excerpt,
   More,
-} from '../components/layouts/basecss';
+} from 'src/components/layouts/basecss';
 import { createLabel } from '../components/util';
 
 export const query = graphql`
@@ -38,15 +40,21 @@ export default ({ data }) => {
     <Layout>
       <ArticleContent>
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <Link to={node.fields.slug} style={{ textDecoration: 'none' }}>
-            <Card key={node.id}>
-              {createLabel(node.frontmatter.category)}
-              <div style={{ padding: 30 }}>
+          <Link
+            key={node.id}
+            to={node.fields.slug}
+            style={{ textDecoration: 'none' }}
+          >
+            <Card>
+              <CategoryLabel label={createLabel(node.frontmatter.category)}>
+                {node.frontmatter.category}
+              </CategoryLabel>
+              <CardContent>
                 <Headline>{node.frontmatter.title}</Headline>
                 <Date>{node.frontmatter.date}</Date>
                 <Excerpt>{node.excerpt}</Excerpt>
                 <More />
-              </div>
+              </CardContent>
             </Card>
           </Link>
         ))}

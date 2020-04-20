@@ -3,8 +3,8 @@ import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { Normalize } from 'styled-normalize';
-
 import Header from './header';
+import CategoriesFilter from '../shared/categoriesFilter';
 import Footer from './footer';
 import { Content } from './basecss';
 
@@ -28,6 +28,15 @@ export default ({ children }) => (
             title
           }
         }
+        allMarkdownRemark {
+          edges {
+            node {
+              frontmatter {
+                category
+              }
+            }
+          }
+        }
       }
     `}
     render={data => (
@@ -44,6 +53,7 @@ export default ({ children }) => (
           ]}
         />
         <Header />
+        <CategoriesFilter data={data.allMarkdownRemark.edges} />
         <Content>{children}</Content>
         <Footer />
       </ThemeProvider>

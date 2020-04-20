@@ -1,5 +1,13 @@
 import styled from 'styled-components';
 
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+   CSS TABLE OF CONTENTS
+
+   1.0 - Layout
+   2.0 - Components
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+/* 1.0 - Layout */
 export const Header = styled.header`
   display: flex;
   flex-direction: column;
@@ -8,40 +16,8 @@ export const Header = styled.header`
   background: ${props =>
     `radial-gradient(circle, ${props.theme.lightPlum}, ${props.theme.darkPlum})`};
   text-align: center;
-  border-bottom: 5px solid ${props => props.theme.lightPlum};
   color: #ffffff;
   font-family: ${props => props.theme.font};
-`;
-
-export const AuthorContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  padding-bottom: 1rem;
-  & img {
-    margin-right: 1rem;
-    border-radius: 80px;
-    width: 40px;
-  }
-`;
-
-export const Main = styled.h1`
-  text-decoration: 'none';
-  color: #d9ca00;
-  font-family: ${props => props.theme.font};
-  font-size: 4.45em;
-  display: inline-block;
-  line-height: 0.7;
-  margin: 0.5em 0;
-`;
-
-export const Secondary = styled.span`
-  display: inline-block;
-  font-family: ${props => (props.secondary ? 'Mr Dafoe' : props.theme.font)};
-  font-size: 0.95em;
-  color: #fff;
-  font-weight: 100;
-  line-height: 0.3;
-  padding-bottom: 20px;
 `;
 
 export const Content = styled.section`
@@ -60,6 +36,61 @@ export const Footer = styled.footer`
   border-top: 5px solid ${props => props.theme.lightPlum};
 `;
 
+/* 2.0 - Components */
+/* 2.1 - Header Logo */
+export const Main = styled.h1`
+  text-decoration: 'none';
+  color: #d9ca00;
+  font-family: ${props => props.theme.font};
+  font-size: 3.45em;
+  display: inline-block;
+  line-height: 0.7;
+  margin: 0.5em 0;
+  letter-spacing: -0.05em;
+`;
+
+export const Secondary = styled.span`
+  display: inline-block;
+  font-family: ${props => (props.secondary ? 'Mr Dafoe' : props.theme.font)};
+  font-size: 0.95em;
+  color: #fff;
+  font-weight: 100;
+  line-height: 0.3;
+  padding-bottom: 20px;
+`;
+
+/* 2.1 - Header Author */
+export const AuthorContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+  & img {
+    margin-right: 1rem;
+    border-radius: 80px;
+    width: 40px;
+  }
+`;
+
+/* 2.2 - Home Category Filter */
+export const CategoryFilter = styled.li`
+  list-style-type: none;
+  padding: 0.5rem;
+  border-radius: 20px;
+  background-color: ${props => props.label};
+  min-width: 100px;
+  margin: 0.25rem;
+  text-align: center;
+  color: white;
+  font-weight: 900;
+`;
+
+export const CategoryFilterContainer = styled.div`
+  display: flex;
+  padding: 0.5rem;
+  background-color: #982475;
+`;
+
+/* 2.2 - Home Blog Post */
 export const ArticleContent = styled.main`
   display: grid;
   grid-gap: 30px;
@@ -68,7 +99,7 @@ export const ArticleContent = styled.main`
 
 export const Card = styled.article`
   background-color: #ffffff;
-  border-radius: 15px;
+  border-radius: 10px;
   box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
   font-family: ${props => props.theme.font};
   transition: box-shadow 0.5s;
@@ -77,13 +108,18 @@ export const Card = styled.article`
   }
 `;
 
-export const Category = styled.span`
+export const CategoryLabel = styled.span`
   color: #fff;
   font-size: 18px;
   font-weight: 400;
   display: block;
-  border-radius: 15px 15px 0 0;
-  padding: 1rem;
+  border-radius: 10px 10px 0 0;
+  padding: 0.75rem;
+  background-color: ${props => props.label};
+`;
+
+export const CardContent = styled.div`
+  padding: 30px;
 `;
 
 export const BlogCategory = styled.p`

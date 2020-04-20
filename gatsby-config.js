@@ -7,6 +7,7 @@ module.exports = {
     `gatsby-transformer-remark`,
     `gatsby-theme-material-ui`,
     'gatsby-plugin-styled-components',
+    'gatsby-plugin-root-import',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -17,11 +18,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          `Josefin Sans`,
-          `Mr Dafoe`
-        ]
-      }
+        fonts: [`Josefin Sans`, `Mr Dafoe`],
+      },
     },
   ],
-}
+};
