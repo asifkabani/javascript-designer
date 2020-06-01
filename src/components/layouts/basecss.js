@@ -82,6 +82,7 @@ export const CategoryFilter = styled.li`
   text-align: center;
   color: white;
   font-weight: 900;
+  cursor: pointer;
 `;
 
 export const CategoryFilterContainer = styled.div`
