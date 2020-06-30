@@ -8,6 +8,12 @@ import styled from 'styled-components';
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
 /* 1.0 - Layout */
+export const PageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`
+
 export const Header = styled.header`
   display: flex;
   flex-direction: column;
@@ -18,13 +24,14 @@ export const Header = styled.header`
   text-align: center;
   color: #ffffff;
   font-family: ${props => props.theme.font};
+  flex: 1;
 `;
 
 export const Content = styled.section`
   margin: 0 auto;
   padding: 2em;
   font-family: ${props => props.theme.font};
-  min-height: calc(100vh - 275px);
+  /* min-height: calc(100vh - 275px); */
 `;
 
 export const Footer = styled.footer`
@@ -118,6 +125,12 @@ export const CategoryLabel = styled.span`
   padding: 0.75rem;
   background-color: ${props => props.label};
 `;
+
+export const CategoryIcon = styled.span`
+  vertical-align: middle;
+  margin-right: 0.25em;
+`;
+
 
 export const CardContent = styled.div`
   padding: 30px;

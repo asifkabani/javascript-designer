@@ -4,9 +4,9 @@ import { StaticQuery, graphql } from 'gatsby';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { Normalize } from 'styled-normalize';
 import Header from './header';
-import CategoriesFilter from '../shared/categoriesFilter';
+// import CategoriesFilter from '../shared/categoriesFilter';
 import Footer from './footer';
-import { Content } from './basecss';
+import { Content, PageContainer } from './basecss';
 
 const GlobalStyle = createGlobalStyle`
   ${Normalize}
@@ -52,10 +52,12 @@ export default ({ children }) => (
             { name: 'keywords', content: 'javascript, designer' },
           ]}
         />
-        <Header />
-        <CategoriesFilter data={data.allMarkdownRemark.edges} />
-        <Content>{children}</Content>
-        <Footer />
+        <PageContainer>
+          <Header />
+          {/* <CategoriesFilter data={data.allMarkdownRemark.edges} /> */}
+          <Content>{children}</Content>
+          <Footer />
+        </PageContainer>
       </ThemeProvider>
     )}
   />

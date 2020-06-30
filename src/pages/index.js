@@ -4,6 +4,7 @@ import Layout from 'src/components/layouts';
 import {
   Card,
   CategoryLabel,
+  CategoryIcon,
   CardContent,
   ArticleContent,
   Date,
@@ -47,6 +48,7 @@ export default ({ data }) => {
           >
             <Card>
               <CategoryLabel label={createLabel(node.frontmatter.category)}>
+                <CategoryIcon icon={node.frontmatter.category} />
                 {node.frontmatter.category}
               </CategoryLabel>
               <CardContent>
