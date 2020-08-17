@@ -12,7 +12,10 @@ import {
   Excerpt,
   More,
 } from 'src/components/layouts/basecss';
-import { createLabel } from '../components/util';
+import { createLabel, createIcon } from '../components/util';
+
+import { IconContext } from 'react-icons';
+import { DiHtml5, DDiCss3, DiJavascript1 } from 'react-icons/di';
 
 export const query = graphql`
   query {
@@ -48,7 +51,14 @@ export default ({ data }) => {
           >
             <Card>
               <CategoryLabel label={createLabel(node.frontmatter.category)}>
-                <CategoryIcon icon={node.frontmatter.category} />
+                {/* <CategoryIcon icon={node.frontmatter.category} /> */}
+                <IconContext.Provider value={{ size: 15 }}>
+                  <div
+                    style={{ display: 'inline-block', verticalAlign: 'middle' }}
+                  >
+                    {createIcon(node.frontmatter.category)}
+                  </div>
+                </IconContext.Provider>
                 {node.frontmatter.category}
               </CategoryLabel>
               <CardContent>
