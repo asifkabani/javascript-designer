@@ -12,7 +12,7 @@ export const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-`
+`;
 
 export const Header = styled.header`
   display: flex;
@@ -126,12 +126,6 @@ export const CategoryLabel = styled.span`
   background-color: ${props => props.label};
 `;
 
-export const CategoryIcon = styled.span`
-  vertical-align: middle;
-  margin-right: 0.25em;
-`;
-
-
 export const CardContent = styled.div`
   padding: 30px;
 `;
@@ -147,15 +141,23 @@ export const Headline = styled.h2`
   margin: 0;
 `;
 
-export const Date = styled.p`
+export const Details = styled.p`
   color: #999;
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  & span {
+    font-weight: 500;
+  }
 `;
 
 export const Excerpt = styled.p`
   color: #999;
-  font-size: 22px;
+  font-size: 16px;
   line-height: 1.5;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
 `;
 
 export const More = styled.span`

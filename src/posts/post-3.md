@@ -1,6 +1,7 @@
 ---
 title: Flexbox in CSS
-date: "2018-09-12"
+date: '2018-09-12'
+author: 'Asif Kabani'
 category: CSS
 tags: ['flexbox', 'css']
 ---

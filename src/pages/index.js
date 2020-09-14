@@ -4,18 +4,14 @@ import Layout from 'src/components/layouts';
 import {
   Card,
   CategoryLabel,
-  CategoryIcon,
   CardContent,
   ArticleContent,
-  Date,
+  Details,
   Headline,
   Excerpt,
   More,
 } from 'src/components/layouts/basecss';
-import { createLabel, createIcon } from '../components/util';
-
-import { IconContext } from 'react-icons';
-import { DiHtml5, DDiCss3, DiJavascript1 } from 'react-icons/di';
+import { createLabel } from '../components/util';
 
 export const query = graphql`
   query {
@@ -28,6 +24,7 @@ export const query = graphql`
             title
             date(formatString: "MMMM DD, YYYY")
             category
+            author
           }
           fields {
             slug
@@ -40,6 +37,7 @@ export const query = graphql`
 `;
 
 export default ({ data }) => {
+  console.log(data);
   return (
     <Layout>
       <ArticleContent>
@@ -51,19 +49,14 @@ export default ({ data }) => {
           >
             <Card>
               <CategoryLabel label={createLabel(node.frontmatter.category)}>
-                {/* <CategoryIcon icon={node.frontmatter.category} /> */}
-                <IconContext.Provider value={{ size: 15 }}>
-                  <div
-                    style={{ display: 'inline-block', verticalAlign: 'middle' }}
-                  >
-                    {createIcon(node.frontmatter.category)}
-                  </div>
-                </IconContext.Provider>
                 {node.frontmatter.category}
               </CategoryLabel>
               <CardContent>
                 <Headline>{node.frontmatter.title}</Headline>
-                <Date>{node.frontmatter.date}</Date>
+                <Details>
+                  By <span>{node.frontmatter.author}</span> on{' '}
+                  <span>{node.frontmatter.date}</span>
+                </Details>
                 <Excerpt>{node.excerpt}</Excerpt>
                 <More />
               </CardContent>

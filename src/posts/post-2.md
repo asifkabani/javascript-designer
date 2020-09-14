@@ -1,7 +1,8 @@
 ---
 title: What is React Native?
-date: "2018-08-05"
-category: "JavaScript"
+date: '2018-08-05'
+author: 'Asif Kabani'
+category: 'JavaScript'
 tags: ['react', 'native']
 ---
 

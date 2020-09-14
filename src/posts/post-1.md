@@ -1,6 +1,7 @@
 ---
 title: New API's in HTML5
-date: "2018-05-30"
+date: '2018-05-30'
+author: 'Asif Kabani'
 category: HTML
 tags: ['HTML']
 ---

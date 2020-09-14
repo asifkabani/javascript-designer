@@ -9,7 +9,7 @@ import {
 } from '../components/layouts/basecss';
 
 export default ({ data }) => {
-  const post = data.markdownRemark
+  const post = data.markdownRemark;
 
   return (
     <Layout>
@@ -18,8 +18,8 @@ export default ({ data }) => {
       <Date>{post.frontmatter.date}</Date>
       <Excerpt dangerouslySetInnerHTML={{ __html: post.html }} />
     </Layout>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query($slug: String!) {
@@ -30,4 +30,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;
