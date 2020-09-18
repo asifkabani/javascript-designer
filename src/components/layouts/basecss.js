@@ -15,23 +15,47 @@ export const PageContainer = styled.div`
 `;
 
 export const Header = styled.header`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: rgb(152, 36, 117);
   background: ${props =>
     `radial-gradient(circle, ${props.theme.lightPlum}, ${props.theme.darkPlum})`};
+  height: 90vh;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
   color: #ffffff;
   font-family: ${props => props.theme.font};
-  flex: 1;
 `;
 
 export const Content = styled.section`
   margin: 0 auto;
   padding: 2em;
   font-family: ${props => props.theme.font};
-  /* min-height: calc(100vh - 275px); */
+
+  & > p {
+    font-size: 1.5em;
+  }
+
+  @media (min-width: 40em) {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+  @media (min-width: 50em) {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+  @media (min-width: 60em) {
+    padding-left: 15rem;
+    padding-right: 15rem;
+  }
+  @media (min-width: 70em) {
+    padding-left: 20rem;
+    padding-right: 20rem;
+  }
+  @media (min-width: 80em) {
+    padding-left: 25rem;
+    padding-right: 25rem;
+  }
 `;
 
 export const Footer = styled.footer`
@@ -41,6 +65,7 @@ export const Footer = styled.footer`
   text-align: center;
   width: 100%;
   border-top: 5px solid ${props => props.theme.lightPlum};
+  height: 10vh;
 `;
 
 /* 2.0 - Components */
@@ -137,7 +162,7 @@ export const BlogCategory = styled.p`
 export const Headline = styled.h2`
   color: #676767;
   font-family: ${props => props.theme.font};
-  font-size: 30px;
+  font-size: 3.25em;
   margin: 0;
 `;
 

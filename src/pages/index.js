@@ -24,10 +24,12 @@ export const query = graphql`
             title
             date(formatString: "MMMM DD, YYYY")
             category
-            author
           }
           fields {
             slug
+            readingTime {
+              text
+            }
           }
           excerpt
         }
@@ -37,7 +39,6 @@ export const query = graphql`
 `;
 
 export default ({ data }) => {
-  console.log(data);
   return (
     <Layout>
       <ArticleContent>
@@ -54,8 +55,10 @@ export default ({ data }) => {
               <CardContent>
                 <Headline>{node.frontmatter.title}</Headline>
                 <Details>
-                  By <span>{node.frontmatter.author}</span> on{' '}
+                  {/* {node.frontmatter.author} */}
                   <span>{node.frontmatter.date}</span>
+                  <br />
+                  <span>{node.fields.readingTime.text}</span>
                 </Details>
                 <Excerpt>{node.excerpt}</Excerpt>
                 <More />

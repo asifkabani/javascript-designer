@@ -4,10 +4,15 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
-    `gatsby-transformer-remark`,
     `gatsby-theme-material-ui`,
     'gatsby-plugin-styled-components',
     'gatsby-plugin-root-import',
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [`gatsby-remark-reading-time`],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
