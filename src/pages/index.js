@@ -15,8 +15,7 @@ import { createLabel } from '../components/util';
 
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      totalCount
+    allMdx(sort: { fields: frontmatter___date, order: DESC }) {
       edges {
         node {
           id
@@ -27,11 +26,8 @@ export const query = graphql`
           }
           fields {
             slug
-            readingTime {
-              text
-            }
           }
-          excerpt
+          timeToRead
         }
       }
     }
@@ -42,7 +38,7 @@ export default ({ data }) => {
   return (
     <Layout>
       <ArticleContent>
-        {data.allMarkdownRemark.edges.map(({ node }) => (
+        {data.allMdx.edges.map(({ node }) => (
           <Link
             key={node.id}
             to={node.fields.slug}
@@ -58,7 +54,7 @@ export default ({ data }) => {
                   {/* {node.frontmatter.author} */}
                   <span>{node.frontmatter.date}</span>
                   <br />
-                  <span>{node.fields.readingTime.text}</span>
+                  <span>{node.timeToRead}</span>
                 </Details>
                 <Excerpt>{node.excerpt}</Excerpt>
                 <More />

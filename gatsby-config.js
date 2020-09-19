@@ -7,10 +7,12 @@ module.exports = {
     `gatsby-theme-material-ui`,
     'gatsby-plugin-styled-components',
     'gatsby-plugin-root-import',
+    `gatsby-plugin-feed-mdx`,
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        plugins: [`gatsby-remark-reading-time`],
+        extensions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [`gatsby-remark-reading-time`],
       },
     },
     {

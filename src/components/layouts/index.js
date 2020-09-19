@@ -28,7 +28,7 @@ export default ({ children }) => (
             title
           }
         }
-        allMarkdownRemark {
+        allMdx {
           edges {
             node {
               frontmatter {
