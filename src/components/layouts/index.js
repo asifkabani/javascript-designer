@@ -13,9 +13,6 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const theme = {
-  gray: '#4c4c4c',
-  lightPlum: '#982475',
-  darkPlum: '#410f32',
   font: 'Josefin Sans, sans-serif',
 };
 

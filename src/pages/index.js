@@ -26,8 +26,11 @@ export const query = graphql`
           }
           fields {
             slug
+            readingTime {
+              text
+            }
           }
-          timeToRead
+          excerpt
         }
       }
     }
@@ -51,10 +54,7 @@ export default ({ data }) => {
               <CardContent>
                 <Headline>{node.frontmatter.title}</Headline>
                 <Details>
-                  {/* {node.frontmatter.author} */}
-                  <span>{node.frontmatter.date}</span>
-                  <br />
-                  <span>{node.timeToRead}</span>
+                  {node.frontmatter.date} &bull; {node.fields.readingTime.text}
                 </Details>
                 <Excerpt>{node.excerpt}</Excerpt>
                 <More />

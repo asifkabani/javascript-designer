@@ -2,12 +2,20 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layouts';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import {
-  BlogCategory,
-  Details,
-  Headline,
-  Excerpt,
-} from '../components/layouts/basecss';
+import { BlogCategory, Details, Headline } from '../components/layouts/basecss';
+
+export const query = graphql`
+  query($slug: String!) {
+    mdx(fields: { slug: { eq: $slug } }) {
+      body
+      frontmatter {
+        title
+        category
+        date
+      }
+    }
+  }
+`;
 
 export default ({ data }) => {
   const post = data.mdx;
@@ -21,14 +29,3 @@ export default ({ data }) => {
     </Layout>
   );
 };
-
-export const query = graphql`
-  query($slug: String!) {
-    mdx(fields: { slug: { eq: $slug } }) {
-      body
-      frontmatter {
-        title
-      }
-    }
-  }
-`;

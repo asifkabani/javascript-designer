@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import colors from './colors';
 
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
    CSS TABLE OF CONTENTS
@@ -15,25 +16,23 @@ export const PageContainer = styled.div`
 `;
 
 export const Header = styled.header`
-  background: ${props =>
-    `radial-gradient(circle, ${props.theme.lightPlum}, ${props.theme.darkPlum})`};
+  background: ${`radial-gradient(circle at center, ${colors.lightPlum}, ${colors.darkPlum})`};
   height: 90vh;
   display: flex;
   flex: 1;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  color: #ffffff;
+  color: ${colors.common.white};
   font-family: ${props => props.theme.font};
 `;
 
 export const Content = styled.section`
   margin: 0 auto;
   padding: 2em;
-  font-family: ${props => props.theme.font};
 
   & > p {
-    font-size: 1.5em;
+    font-size: 18px;
   }
 
   @media (min-width: 40em) {
@@ -59,12 +58,12 @@ export const Content = styled.section`
 `;
 
 export const Footer = styled.footer`
-  background-color: ${props => props.theme.darkPlum};
-  color: #ffffff;
+  background-color: ${colors.darkPlum};
+  color: ${colors.common.white};
   font-family: ${props => props.theme.font};
   text-align: center;
   width: 100%;
-  border-top: 5px solid ${props => props.theme.lightPlum};
+  border-top: 5px solid ${colors.lightPlum};
   height: 10vh;
 `;
 
@@ -72,7 +71,7 @@ export const Footer = styled.footer`
 /* 2.1 - Header Logo */
 export const Main = styled.h1`
   text-decoration: 'none';
-  color: #d9ca00;
+  color: ${colors.jsColor};
   font-family: ${props => props.theme.font};
   font-size: 3.45em;
   display: inline-block;
@@ -85,7 +84,7 @@ export const Secondary = styled.span`
   display: inline-block;
   font-family: ${props => (props.secondary ? 'Mr Dafoe' : props.theme.font)};
   font-size: 0.95em;
-  color: #fff;
+  color: ${colors.common.white};
   font-weight: 100;
   line-height: 0.3;
   padding-bottom: 20px;
@@ -96,6 +95,7 @@ export const AuthorContainer = styled.div`
   display: flex;
   justify-content: center;
   padding-bottom: 1rem;
+
   & img {
     margin-right: 1rem;
     border-radius: 80px;
@@ -108,11 +108,11 @@ export const CategoryFilter = styled.li`
   list-style-type: none;
   padding: 0.5rem;
   border-radius: 20px;
-  background-color: ${props => props.label};
+  background-color: red;
   min-width: 100px;
   margin: 0.25rem;
   text-align: center;
-  color: white;
+  color: ${colors.common.white};
   font-weight: 900;
   cursor: pointer;
 `;
@@ -120,7 +120,7 @@ export const CategoryFilter = styled.li`
 export const CategoryFilterContainer = styled.div`
   display: flex;
   padding: 0.5rem;
-  background-color: #982475;
+  background-color: red;
 `;
 
 /* 2.2 - Home Blog Post */
@@ -131,18 +131,19 @@ export const ArticleContent = styled.main`
 `;
 
 export const Card = styled.article`
-  background-color: #ffffff;
+  background-color: ${colors.common.white};
   border-radius: 10px;
-  box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 10px 30px 0px ${colors.common.lightShadow};
   font-family: ${props => props.theme.font};
   transition: box-shadow 0.5s;
+
   &:hover {
-    box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 10px 30px 0px ${colors.common.darkShadow};
   }
 `;
 
 export const CategoryLabel = styled.span`
-  color: #fff;
+  color: ${colors.common.white};
   font-size: 18px;
   font-weight: 400;
   display: block;
@@ -156,38 +157,45 @@ export const CardContent = styled.div`
 `;
 
 export const BlogCategory = styled.p`
-  color: white;
+  color: ${colors.common.white};
 `;
 
 export const Headline = styled.h2`
-  color: #676767;
   font-family: ${props => props.theme.font};
-  font-size: 3.25em;
+  font-size: 2em;
   margin: 0;
+  text-rendering: optimizelegibility;
+  letter-spacing: -0.015em;
+  line-height: 1.125;
+  color: ${colors.darkGray};
+  font-weight: 800;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
 `;
 
 export const Details = styled.p`
-  color: #999;
+  color: ${colors.lightGray};
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 500;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,
     'Helvetica Neue', Arial, sans-serif;
+
   & span {
     font-weight: 500;
   }
 `;
 
 export const Excerpt = styled.p`
-  color: #999;
-  font-size: 16px;
+  color: ${colors.darkGray};
+  font-size: 18px;
   line-height: 1.5;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,
     'Helvetica Neue', Arial, sans-serif;
 `;
 
 export const More = styled.span`
-  color: ${props => props.theme.lightPlum};
+  color: ${colors.darkPlum};
   font-size: 2em;
+
   &::after {
     content: '→';
   }

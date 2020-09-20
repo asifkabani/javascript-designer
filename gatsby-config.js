@@ -8,11 +8,12 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-plugin-root-import',
     `gatsby-plugin-feed-mdx`,
+    `gatsby-remark-reading-time`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [`.mdx`, `.md`],
-        gatsbyRemarkPlugins: [`gatsby-remark-reading-time`],
+        gatsbyRemarkPlugins: [`gatsby-remark-responsive-iframe`],
       },
     },
     {

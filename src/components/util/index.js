@@ -1,4 +1,5 @@
 import React from 'react';
+import colors from '../layouts/colors';
 import { DiHtml5, DiCss3, DiJavascript1 } from 'react-icons/di';
 
 // Color label depending on blog cateogry.
@@ -6,17 +7,17 @@ export function createLabel(category) {
   let backgroundColor;
   switch (category) {
     case 'HTML':
-      backgroundColor = '#e34c26';
+      backgroundColor = colors.htmlColor;
       break;
     case 'CSS':
-      backgroundColor = '#006eba';
+      backgroundColor = colors.cssColor;
       break;
     case 'JavaScript':
-      backgroundColor = '#d6ba32';
+      backgroundColor = colors.jsColor;
       break;
 
     default:
-      backgroundColor = '#410f32';
+      backgroundColor = colors.darkPlum;
       break;
   }
 
