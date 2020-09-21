@@ -57,10 +57,6 @@ export const Content = styled.section`
     padding-left: 20rem;
     padding-right: 20rem;
   }
-  @media (min-width: 80em) {
-    padding-left: 25rem;
-    padding-right: 25rem;
-  }
 `;
 
 export const Footer = styled.footer`
