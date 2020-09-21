@@ -35,6 +35,12 @@ export const Content = styled.section`
     font-size: 18px;
   }
 
+  & > hr {
+    border: 0;
+    border-bottom: 1px dashed ${colors.lightPlum};
+    background: transparent;
+  }
+
   @media (min-width: 40em) {
     padding-left: 5rem;
     padding-right: 5rem;
@@ -90,7 +96,7 @@ export const Secondary = styled.span`
   padding-bottom: 20px;
 `;
 
-/* 2.1 - Header Author */
+/* 2.2 - Header Author */
 export const AuthorContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -103,7 +109,7 @@ export const AuthorContainer = styled.div`
   }
 `;
 
-/* 2.2 - Home Category Filter */
+/* 2.3 - Home Category Filter */
 export const CategoryFilter = styled.li`
   list-style-type: none;
   padding: 0.5rem;
@@ -123,7 +129,7 @@ export const CategoryFilterContainer = styled.div`
   background-color: red;
 `;
 
-/* 2.2 - Home Blog Post */
+/* 2.4 - Home Blog Post */
 export const ArticleContent = styled.main`
   display: grid;
   grid-gap: 30px;
@@ -162,7 +168,7 @@ export const BlogCategory = styled.p`
 
 export const Headline = styled.h2`
   font-family: ${props => props.theme.font};
-  font-size: 2em;
+  font-size: 2.5em;
   margin: 0;
   text-rendering: optimizelegibility;
   letter-spacing: -0.015em;
@@ -198,5 +204,23 @@ export const More = styled.span`
 
   &::after {
     content: '→';
+  }
+`;
+
+/* 3.0 - Blog Post Category */
+export const BlogPostCategory = styled.p`
+  color: inherit;
+`;
+
+export const Summary = styled.section`
+  padding: 1rem 0;
+
+  &:before {
+    content: 'Quick summary 👉 ';
+    display: inline;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: ${colors.lightPlum};
+    text-transform: uppercase;
   }
 `;

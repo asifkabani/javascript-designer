@@ -2,7 +2,11 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layouts';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { BlogCategory, Details, Headline } from '../components/layouts/basecss';
+import {
+  BlogPostCategory,
+  Details,
+  Headline,
+} from '../components/layouts/basecss';
 
 export const query = graphql`
   query($slug: String!) {
@@ -11,7 +15,7 @@ export const query = graphql`
       frontmatter {
         title
         category
-        date
+        date(formatString: "MMMM DD, YYYY")
       }
     }
   }
@@ -22,9 +26,10 @@ export default ({ data }) => {
 
   return (
     <Layout>
+      <Details>
+        {post.frontmatter.date} &bull; {post.frontmatter.category}
+      </Details>
       <Headline>{post.frontmatter.title}</Headline>
-      <BlogCategory>{post.frontmatter.category}</BlogCategory>
-      <Details>{post.frontmatter.date}</Details>
       <MDXRenderer>{post.body}</MDXRenderer>
     </Layout>
   );

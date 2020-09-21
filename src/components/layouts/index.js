@@ -40,6 +40,7 @@ export default ({ children }) => (
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Helmet
+          htmlAttributes={{ lang: 'en' }}
           title={data.site.siteMetadata.title}
           meta={[
             {
