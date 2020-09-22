@@ -23,6 +23,7 @@ export const query = graphql`
             title
             date(formatString: "MMMM DD, YYYY")
             category
+            excerptText
           }
           fields {
             slug
@@ -30,7 +31,6 @@ export const query = graphql`
               text
             }
           }
-          excerpt
         }
       }
     }
@@ -56,7 +56,7 @@ export default ({ data }) => {
                 <Details>
                   {node.frontmatter.date} &bull; {node.fields.readingTime.text}
                 </Details>
-                <Excerpt>{node.excerpt}</Excerpt>
+                <Excerpt>{node.frontmatter.excerptText}</Excerpt>
                 <More />
               </CardContent>
             </Card>

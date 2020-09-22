@@ -195,9 +195,15 @@ export const Excerpt = styled.p`
 `;
 
 export const More = styled.span`
-  color: ${colors.darkPlum};
-  font-size: 2em;
+  color: ${colors.lightPlum};
+  font-size: 1rem;
+  display: flex;
+  text-transform: uppercase;
 
+  &::before {
+    content: 'Read More';
+    margin-right: 0.5rem;
+  }
   &::after {
     content: '→';
   }
