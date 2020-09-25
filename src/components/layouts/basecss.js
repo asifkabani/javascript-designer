@@ -17,7 +17,6 @@ export const PageContainer = styled.div`
 
 export const Header = styled.header`
   background: ${`radial-gradient(circle at center, ${colors.lightPlum}, ${colors.darkPlum})`};
-  height: 90vh;
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -25,20 +24,21 @@ export const Header = styled.header`
   text-align: center;
   color: ${colors.common.white};
   font-family: ${props => props.theme.font};
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
 `;
 
 export const Content = styled.section`
   margin: 0 auto;
-  padding: 2em;
+  padding: 10em 2em 2em 2em;
 
   & > p {
-    font-size: 18px;
-  }
-
-  & > hr {
-    border: 0;
-    border-bottom: 1px dashed ${colors.lightPlum};
-    background: transparent;
+    font-size: 1.25rem;
+    line-height: 1.8;
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
   }
 
   @media (min-width: 40em) {
@@ -71,8 +71,8 @@ export const Footer = styled.footer`
 
 /* 2.0 - Components */
 /* 2.1 - Header Logo */
-export const Main = styled.h1`
-  text-decoration: 'none';
+export const Main = styled.div`
+  font-weight: bold;
   color: ${colors.jsColor};
   font-family: ${props => props.theme.font};
   font-size: 3.45em;
@@ -196,8 +196,8 @@ export const Excerpt = styled.p`
 
 export const More = styled.span`
   color: ${colors.lightPlum};
-  font-size: 1rem;
-  display: flex;
+  font-size: 0.75rem;
+  font-weight: 700;
   text-transform: uppercase;
 
   &::before {
@@ -216,6 +216,11 @@ export const BlogPostCategory = styled.p`
 
 export const Summary = styled.section`
   padding: 1rem 0;
+  line-height: 1.5;
+  font-size: 1rem;
+  border: 0;
+  border-bottom: 1px dashed ${colors.lightPlum};
+  background: transparent;
 
   &:before {
     content: 'Quick summary 👉 ';

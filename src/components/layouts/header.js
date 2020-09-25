@@ -7,8 +7,8 @@ import profilePicture from '../../../static/profile.jpeg';
 export default () => (
   <Header>
     <Logo />
-    <AuthorContainer>
+    {/* <AuthorContainer>
       <Author src={profilePicture} name="Asif Kabani" />
-    </AuthorContainer>
+    </AuthorContainer> */}
   </Header>
 );
