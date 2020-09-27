@@ -31,6 +31,14 @@ module.exports = {
               ],
             },
           },
+          {
+            resolve: `gatsby-remark-acronyms`,
+            options: {
+              acronyms: {
+                React: `React is a cool language. I am coming from gatsby config file.`,
+              },
+            },
+          },
           `gatsby-remark-responsive-iframe`,
         ],
       },
