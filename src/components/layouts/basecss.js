@@ -32,7 +32,7 @@ export const Header = styled.header`
 
 export const Content = styled.section`
   margin: 0 auto;
-  padding: 10em 2em 2em 2em;
+  padding: 15em 2em 2em 2em;
 
   & > p {
     font-size: 1.25rem;
