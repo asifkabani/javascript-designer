@@ -4,6 +4,7 @@ import Layout from '../components/layouts';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { Details, Headline, Summary } from '../components/layouts/basecss';
+import Tooltip from '../components/shared/tooltip';
 
 export const query = graphql`
   query($slug: String!) {
@@ -19,9 +20,11 @@ export const query = graphql`
   }
 `;
 
+// const Acronym = props => <div style={{ color: 'green' }} {...props} />;
+
 export default ({ data }) => {
   const post = data.mdx;
-  const shortcodes = { Summary };
+  const shortcodes = { Summary, abbr: Tooltip };
 
   return (
     <Layout>

@@ -1,3 +1,5 @@
+const dictionary = require('./gatsby-dictionary');
+
 module.exports = {
   siteMetadata: {
     title: 'JavaScript Designer',
@@ -34,9 +36,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-acronyms`,
             options: {
-              acronyms: {
-                React: `React is a cool language. I am coming from gatsby config file.`,
-              },
+              acronyms: dictionary,
             },
           },
           `gatsby-remark-responsive-iframe`,
