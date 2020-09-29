@@ -17,6 +17,9 @@ module.exports = {
         extensions: [`.mdx`, `.md`],
         gatsbyRemarkPlugins: [
           {
+            resolve: `gatsby-remark-highlight-code`,
+          },
+          {
             resolve: 'gatsby-remark-embed-video',
             options: {
               width: 800,
