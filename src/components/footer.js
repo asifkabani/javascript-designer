@@ -1,23 +1,14 @@
 import React from "react";
-import { graphql, useStaticQuery } from "gatsby";
+import { useSiteMetadata } from "../hooks/useSiteMetadata";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBrain, faHeart } from "@fortawesome/free-solid-svg-icons";
 
 function Footer() {
-  const { site } = useStaticQuery(graphql`
-    query AuthorQuery {
-      site {
-        siteMetadata {
-          author {
-            name
-          }
-        }
-      }
-    }
-  `);
+  const {
+    author: { name },
+  } = useSiteMetadata();
 
   const year = new Date().getFullYear();
-  const author = site.siteMetadata.author.name;
 
   return (
     <footer className="bg-jsdPurple text-center">
@@ -30,7 +21,7 @@ function Footer() {
         }}
       >
         Made with <FontAwesomeIcon icon={faBrain} color="#ff3399" alt="Brain" />{" "}
-        & <FontAwesomeIcon icon={faHeart} color="red" alt="Love" /> by {author}
+        & <FontAwesomeIcon icon={faHeart} color="red" alt="Love" /> by {name}
         <br />
         JavaScript Designer © Copyright {year}
       </small>
