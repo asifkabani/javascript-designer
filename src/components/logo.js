@@ -1,18 +1,9 @@
 import React from "react";
-import { graphql, useStaticQuery, Link } from "gatsby";
+import { useSiteMetadata } from "../hooks/useSiteMetadata";
+import { Link } from "gatsby";
 
 function Logo() {
-  const { site } = useStaticQuery(graphql`
-    query SiteName {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-
-  const title = site.siteMetadata.title;
+  const { title } = useSiteMetadata();
   const mainText = title.split(" ")[0];
   const secondaryText = title.split(" ")[1];
 
