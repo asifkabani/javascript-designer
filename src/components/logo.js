@@ -18,7 +18,7 @@ function Logo() {
 
   return (
     <Link to="/">
-      <h1 className="font-josefinSans text-jsdYellow text-6xl inline-block leading-3 pt-10">
+      <h1 className="font-josefinSans font-medium text-jsdYellow text-6xl inline-block leading-3 tracking-tighter pt-10">
         {mainText}
         <br />
         <span className="font-mrDafoe text-white text-6xl inline-block pb-10">

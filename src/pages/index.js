@@ -1,6 +1,6 @@
 import React from "react";
-
 import Layout from "../components/layout";
+import Card from "../components/card";
 // import SEO from "../components/seo";
 
 function IndexPage() {
@@ -11,23 +11,13 @@ function IndexPage() {
         title="Home"
       /> */}
 
-      <section className="text-center">
-        <h2 className="inline-block p-3 mb-4 text-2xl font-bold bg-yellow-400">
-          Hey there! Welcome to your first Gatsby site.
-        </h2>
-
-        <p className="leading-loose">
-          This is a barebones starter for Gatsby styled using{` `}
-          <a
-            className="font-bold text-gray-900 no-underline"
-            href="https://tailwindcss.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Tailwind CSS
-          </a>
-          , a utility-first CSS framework.
-        </p>
+      <section>
+        <Card
+          category="JavaScript"
+          heading="What is React?"
+          date="10/12/2021"
+          excerpt="This is the excerpt for this post"
+        />
       </section>
     </Layout>
   );
