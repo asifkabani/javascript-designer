@@ -4,13 +4,16 @@ export const useAllContentfulBlogPosts = () => {
   const { allContentfulBlogPost } = useStaticQuery(
     graphql`
       query BlogIndexQuery {
-        allContentfulBlogPost {
+        allContentfulBlogPost(sort: { fields: [createdAt], order: DESC }) {
           nodes {
-            id
             slug
             title
             excerpt
             createdAt(formatString: "MMMM DD, YYYY")
+            contentful_id
+          }
+          pageInfo {
+            perPage
           }
         }
       }

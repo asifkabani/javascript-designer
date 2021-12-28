@@ -24,6 +24,8 @@ module.exports = {
     `gatsby-plugin-eslint`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
+    `gatsby-transformer-remark`,
+    `gatsby-plugin-offline`,
     {
       resolve: "gatsby-source-contentful",
       options: {
@@ -55,6 +57,5 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-offline`,
   ],
 };

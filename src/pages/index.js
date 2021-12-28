@@ -16,13 +16,15 @@ function IndexPage() {
         title={title}
       />
       {nodes.map((post) => (
-        <article key={post.id}>
-          <Card
-            category="JavaScript"
-            heading={post.title}
-            date={post.createdAt}
-            excerpt={post.excerpt}
-          />
+        <article key={post.contentful_id}>
+          <Card>
+            <Card.Category>{"Java"}</Card.Category>
+            <div className="p-8">
+              <Card.Header>{post.title}</Card.Header>
+              <Card.Date>{post.createdAt}</Card.Date>
+              <Card.Excerpt>{post.excerpt}</Card.Excerpt>
+            </div>
+          </Card>
         </article>
       ))}
     </Layout>
