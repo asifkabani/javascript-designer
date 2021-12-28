@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 function Header({ children }) {
   return (
-    <h2 className="font-josefinSans text-gray-600 text-3xl">{children}</h2>
+    <h2 className="font-josefinSans text-gray-600 text-3xl mb-4">{children}</h2>
   );
 }
 
@@ -17,13 +17,15 @@ function Category({ children }) {
 
 function Date({ children }) {
   return (
-    <p className="font-josefinSans text-gray-500 text-lg py-3">{children}</p>
+    <p className="font-josefinSans text-gray-500 text-lg py-3 mb-4">
+      {children}
+    </p>
   );
 }
 
 function Excerpt({ children }) {
   return (
-    <p className="font-josefinSans text-gray-500 text-2xl leading-6">
+    <p className="font-josefinSans text-gray-500 text-2xl leading-6 mb-4">
       {children}
     </p>
   );

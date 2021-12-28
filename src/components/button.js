@@ -1,16 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function Button({ title }) {
+function Button({ children }) {
   return (
-    <button className="border-red-500 bg-transparent text-white border-4 p-1 text-sm m-2 transition-all duration-500 ease-in-out hover:bg-sky-700 after:content-[' \\27F6']">
-      {title}
+    <button className="font-josefinSans border border-jsdPurple text-jsdPurple rounded-md p-4 text-base mt-4 transition-all hover:bg-jsdPurple hover:text-white">
+      {children}
     </button>
   );
 }
 
 Button.propTypes = {
-  title: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default Button;
