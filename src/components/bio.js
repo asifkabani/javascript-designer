@@ -10,11 +10,9 @@ function Bio() {
   return (
     <div className="flex justify-center pb-10">
       <img
-        className="rounded-full"
+        className="rounded-full w-14 h-14 ring-jsdYellow ring-2"
         src={authorImage}
         alt={name}
-        width={50}
-        height={50}
       />
       <p className="text-white w-96">
         Personal blog of {name}. You can follow me on Twitter or get in touch

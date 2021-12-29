@@ -2,9 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function Header({ children }) {
-  return (
-    <h2 className="font-josefinSans text-gray-600 text-3xl mb-4">{children}</h2>
-  );
+  return <h2 className="text-gray-600 text-3xl mb-4">{children}</h2>;
 }
 
 function Category({ children }) {
@@ -16,19 +14,11 @@ function Category({ children }) {
 }
 
 function Date({ children }) {
-  return (
-    <p className="font-josefinSans text-gray-500 text-lg py-3 mb-4">
-      {children}
-    </p>
-  );
+  return <p className="text-gray-500 text-md py-3 mb-4">{children}</p>;
 }
 
 function Excerpt({ children }) {
-  return (
-    <p className="font-josefinSans text-gray-500 text-2xl leading-8 mb-10">
-      {children}
-    </p>
-  );
+  return <p className="text-gray-500 mb-10">{children}</p>;
 }
 
 function Card({ children }) {
