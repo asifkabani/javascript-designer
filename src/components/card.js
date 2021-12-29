@@ -25,7 +25,7 @@ function Date({ children }) {
 
 function Excerpt({ children }) {
   return (
-    <p className="font-josefinSans text-gray-500 text-2xl leading-8 mb-4">
+    <p className="font-josefinSans text-gray-500 text-2xl leading-8 mb-10">
       {children}
     </p>
   );

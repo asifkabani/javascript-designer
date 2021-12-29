@@ -69,6 +69,9 @@ function SEO({ seoDescription, lang, meta, seoKeywords, seoTitle }) {
       }
       title={metaTitle}
       titleTemplate={`%s | ${metaTitle}`}
+      bodyAttributes={{
+        class: "font-lg leading-relaxed text-gray-800",
+      }}
     />
   );
 }

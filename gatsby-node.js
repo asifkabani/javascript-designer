@@ -38,7 +38,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         index === posts.length - 1 ? null : posts[index + 1].slug;
 
       createPage({
-        path: `/blog/${post.slug}/`,
+        path: post.slug,
         component: blogPost,
         context: {
           slug: post.slug,

@@ -1,6 +1,5 @@
 import React from "react";
-import { useAllContentfulBlogPosts } from "../hooks/useAllContentfulBlogPosts";
-import { useSiteMetadata } from "../hooks/useSiteMetadata";
+import { useAllContentfulBlogPosts, useSiteMetadata } from "../hooks";
 import Layout from "../components/layout";
 import Card from "../components/card";
 import Button from "../components/button";
@@ -25,7 +24,7 @@ function IndexPage() {
                 <Card.Header>{post.title}</Card.Header>
                 <Card.Date>{post.createdAt}</Card.Date>
                 <Card.Excerpt>{post.excerpt}</Card.Excerpt>
-                <Button>Read ⟶</Button>
+                <Button to={post.slug}>Read ⟶</Button>
               </div>
             </Card>
           </article>
