@@ -1,13 +1,13 @@
-import React from "react";
-import { useAllContentfulBlogPosts, useSiteMetadata } from "../hooks";
-import Layout from "../components/layout";
-import Card from "../components/card";
-import Button from "../components/button";
-import SEO from "../components/seo";
+import React from 'react'
+import { useAllContentfulBlogPosts, useSiteMetadata } from '../hooks'
+import Layout from '../components/layout'
+import Card from '../components/card'
+import Button from '../components/button'
+import SEO from '../components/seo'
 
 function IndexPage() {
-  const { nodes } = useAllContentfulBlogPosts();
-  const { title } = useSiteMetadata();
+  const { nodes } = useAllContentfulBlogPosts()
+  const { title } = useSiteMetadata()
 
   return (
     <Layout>
@@ -19,7 +19,7 @@ function IndexPage() {
         {nodes.map((post) => (
           <article key={post.contentful_id}>
             <Card>
-              <Card.Category>{"Java"}</Card.Category>
+              <Card.Category>{'General'}</Card.Category>
               <div className="p-8">
                 <Card.Header>{post.title}</Card.Header>
                 <Card.Date>{post.createdAt}</Card.Date>
@@ -31,7 +31,7 @@ function IndexPage() {
         ))}
       </main>
     </Layout>
-  );
+  )
 }
 
-export default IndexPage;
+export default IndexPage
