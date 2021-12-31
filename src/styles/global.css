@@ -11,6 +11,14 @@
         @apply mb-2 text-2xl font-bold text-gray-900 md:text-2xl lg:text-3xl xl:text-4xl md:leading-tight
     }
 
+    h3 {
+        @apply mb-2 text-xl font-bold text-gray-900 md:text-xl lg:text-2xl xl:text-3xl md:leading-tight
+    }
+
+    h4 {
+        @apply mb-2 text-lg font-bold text-gray-900 md:text-lg lg:text-xl xl:text-2xl md:leading-tight
+    }
+
     p {
         @apply mb-7
     }
