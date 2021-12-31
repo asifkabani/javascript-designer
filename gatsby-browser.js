@@ -1,7 +1,5 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+import "@fontsource/josefin-sans/700.css";
+import "@fontsource/josefin-sans/500.css";
+import "@fontsource/mr-dafoe";
 
- // You can delete this file if you're not using it
+import "./src/styles/global.css";

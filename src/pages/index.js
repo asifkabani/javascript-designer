@@ -1,71 +1,37 @@
 import React from "react";
-import { navigate } from "gatsby";
-import Layout from "../components/layouts";
-import { Box, ArticleContent, Category, Date, Headline, Excerpt, More } from '../layouts/basecss';
+import { useAllContentfulBlogPosts, useSiteMetadata } from "../hooks";
+import Layout from "../components/layout";
+import Card from "../components/card";
+import Button from "../components/button";
+import SEO from "../components/seo";
 
-// Color label depending on blog cateogry.
-const createLabel = (category) => {
-  let backgroundColor = '';
-  switch (category) {
-    case 'HTML':
-      backgroundColor = '#E44D26'
-      break;
-    case 'CSS':
-      backgroundColor = '#0070BA'
-      break;
-    case 'JavaScript':
-      backgroundColor = '#63A715'
-      break;
-  }
+function IndexPage() {
+  const { nodes } = useAllContentfulBlogPosts();
+  const { title } = useSiteMetadata();
+
   return (
-    <Category style={{ backgroundColor }}>
-      {category}
-    </Category>
+    <Layout>
+      <SEO
+        keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
+        title={title}
+      />
+      <main className="grid gap-12 grid-cols-cards">
+        {nodes.map((post) => (
+          <article key={post.contentful_id}>
+            <Card>
+              <Card.Category>{"Java"}</Card.Category>
+              <div className="p-8">
+                <Card.Header>{post.title}</Card.Header>
+                <Card.Date>{post.createdAt}</Card.Date>
+                <Card.Excerpt>{post.excerpt}</Card.Excerpt>
+                <Button to={post.slug}>Read ⟶</Button>
+              </div>
+            </Card>
+          </article>
+        ))}
+      </main>
+    </Layout>
   );
 }
 
-export default () => (
-  <StaticQuery
-    query={graphql`
-      query IndexQuery {
-        allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-          totalCount
-          edges {
-            node {
-              id
-              frontmatter {
-                title
-                date(formatString: "MMMM DD, YYYY")
-                category
-              }
-              fields {
-                slug
-              }
-              excerpt
-            }
-          }
-        }
-      }
-    `}
-    render={data => (
-      <Layout>
-        <ArticleContent>
-          {data.allMarkdownRemark.edges.map(({ node }) =>
-            <Box key={node.id}>
-              {createLabel(node.frontmatter.category)}
-              <div style={{ padding: 30 }}>
-                <Headline>{node.frontmatter.title}</Headline>
-                <Date>{node.frontmatter.date}</Date>
-                <Excerpt>{node.excerpt}</Excerpt>
-                <Link navigate={node.fields.slug} style={{ textDecoration: 'none' }}>
-                  <More>Read</More>
-                </Link>
-              </div>
-            </Box>
-          )}
-        </ArticleContent>
-      </Layout>
-    )}
-  />
-);
-
+export default IndexPage;

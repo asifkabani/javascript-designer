@@ -1,26 +1,61 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
+const resolveConfig = require("tailwindcss/resolveConfig");
+const tailwindConfig = require("./tailwind.config.js");
+
+const fullConfig = resolveConfig(tailwindConfig);
+
 module.exports = {
   siteMetadata: {
-    title: 'JavaScript Designer',
+    title: `JavaScript Designer`,
+    description: "hello this is the description",
+    author: {
+      name: "Asif Kabani",
+    },
+    siteUrl: `https://javascriptdesigner.com/`,
+    social: {
+      email: "hello@javascriptdesigner.com",
+      twitter: `js_designer006`,
+    },
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
+    `gatsby-plugin-eslint`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-image`,
     `gatsby-transformer-remark`,
-    'gatsby-plugin-styled-components',
+    `gatsby-plugin-offline`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-contentful",
       options: {
-        name: `src`,
-        path: `${__dirname}/src/`,
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        fonts: [
-          `Josefin Sans`,
-          `Mr Dafoe`
-        ]
-      }
+        name: `gatsby-starter-tailwind`,
+        short_name: `starter`,
+        start_url: `/`,
+        background_color: fullConfig.theme.colors.white,
+        theme_color: fullConfig.theme.colors.green["500"],
+        display: `minimal-ui`,
+        icon: `src/images/tailwind-icon.png`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-postcss`,
+      options: {
+        postCssPlugins: [
+          require(`tailwindcss`)(tailwindConfig),
+          require(`autoprefixer`),
+          ...(process.env.NODE_ENV === `production`
+            ? [require(`cssnano`)]
+            : []),
+        ],
+      },
     },
   ],
-}
+};
