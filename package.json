@@ -59,6 +59,7 @@
     "eslint-loader": "4.0.2",
     "eslint-plugin-import": "2.23.4",
     "eslint-plugin-react": "7.24.0",
+    "eslint-webpack-plugin": "^3.1.1",
     "gatsby-plugin-eslint": "2.0.8",
     "postcss": "8.3.4",
     "prettier": "2.3.2",
@@ -66,9 +67,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/taylorbryant/gatsby-starter-tailwind"
+    "url": "https://github.com/asifkabani/javascript-designer"
   },
   "bugs": {
-    "url": "https://github.com/taylorbryant/gatsby-starter-tailwind/issues"
+    "url": "https://github.com/asifkabani/javascript-designer/issues"
   }
 }
