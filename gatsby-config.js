@@ -1,22 +1,22 @@
-require("dotenv").config({
+require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
-});
+})
 
-const resolveConfig = require("tailwindcss/resolveConfig");
-const tailwindConfig = require("./tailwind.config.js");
+const resolveConfig = require('tailwindcss/resolveConfig')
+const tailwindConfig = require('./tailwind.config.js')
 
-const fullConfig = resolveConfig(tailwindConfig);
+const fullConfig = resolveConfig(tailwindConfig)
 
 module.exports = {
   siteMetadata: {
     title: `JavaScript Designer`,
-    description: "hello this is the description",
+    description: 'Personal blog of Asif Kabani.',
     author: {
-      name: "Asif Kabani",
+      name: 'Asif Kabani',
     },
     siteUrl: `https://javascriptdesigner.com/`,
     social: {
-      email: "hello@javascriptdesigner.com",
+      email: 'hello@javascriptdesigner.com',
       twitter: `js_designer006`,
     },
   },
@@ -27,7 +27,7 @@ module.exports = {
     `gatsby-transformer-remark`,
     `gatsby-plugin-offline`,
     {
-      resolve: "gatsby-source-contentful",
+      resolve: 'gatsby-source-contentful',
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
@@ -40,7 +40,7 @@ module.exports = {
         short_name: `starter`,
         start_url: `/`,
         background_color: fullConfig.theme.colors.white,
-        theme_color: fullConfig.theme.colors.green["500"],
+        theme_color: fullConfig.theme.colors.green['500'],
         display: `minimal-ui`,
         icon: `src/images/tailwind-icon.png`,
       },
@@ -58,4 +58,4 @@ module.exports = {
       },
     },
   ],
-};
+}
