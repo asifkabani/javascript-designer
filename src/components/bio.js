@@ -14,12 +14,26 @@ function Bio() {
         src={authorImage}
         alt={name}
       />
-      <p className="text-white w-96">
+      <p className="text-white w-96 pl-4">
         Personal blog of {name}. You can follow me on{' '}
-        <a href="https://twitter.com/js_designer006" target="_blank" rel="noreferrer">
+        <a
+          className="underline text-jsdYellow font-bold hover:no-underline"
+          href="https://twitter.com/js_designer006"
+          target="_blank"
+          rel="noreferrer"
+        >
           Twitter
         </a>{' '}
-        or get in touch with me via email.
+        or get in touch with me through my website at{' '}
+        <a
+          className="underline text-jsdYellow font-bold hover:no-underline"
+          href="https://asifkabani.com"
+          target="_blank"
+          rel="noreferrer"
+        >
+          asifkabani.com
+        </a>
+        .
       </p>
     </div>
   )
