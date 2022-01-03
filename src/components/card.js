@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react'
+import PropTypes from 'prop-types'
 
 function Header({ children }) {
-  return <h2 className="text-gray-600 text-3xl mb-4">{children}</h2>;
+  return <h3>{children}</h3>
 }
 
 function Category({ children }) {
@@ -10,15 +10,19 @@ function Category({ children }) {
     <span className="text-white text-sm font-normal block rounded-t-md p-4 bg-green-600">
       {children}
     </span>
-  );
+  )
 }
 
 function Date({ children }) {
-  return <p className="text-gray-500 text-md py-3 mb-4">{children}</p>;
+  return (
+    <span className="block mb-5 text-sm font-semibold text-gray-500 uppercase tracking-wider leading-3">
+      {children}
+    </span>
+  )
 }
 
 function Excerpt({ children }) {
-  return <p className="text-gray-500 mb-10">{children}</p>;
+  return <p className="text-gray-500 mb-10 text-xl">{children}</p>
 }
 
 function Card({ children }) {
@@ -26,29 +30,29 @@ function Card({ children }) {
     <article className="bg-white rounded-md shadow-lg transition-shadow hover:shadow-2xl">
       {children}
     </article>
-  );
+  )
 }
 
-Card.Header = Header;
-Card.Category = Category;
-Card.Date = Date;
-Card.Excerpt = Excerpt;
+Card.Header = Header
+Card.Category = Category
+Card.Date = Date
+Card.Excerpt = Excerpt
 Header.propTypes = {
   children: PropTypes.node.isRequired,
-};
+}
 Category.propTypes = {
   children: PropTypes.node.isRequired,
-};
+}
 
 Date.propTypes = {
   children: PropTypes.node.isRequired,
-};
+}
 
 Excerpt.propTypes = {
   children: PropTypes.node.isRequired,
-};
+}
 Card.propTypes = {
   children: PropTypes.node.isRequired,
-};
+}
 
-export default Card;
+export default Card
