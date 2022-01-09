@@ -1,5 +1,5 @@
 module.exports = {
-  purge: ['./src/**/*.js'],
+  content: ['./src/**/*.js'],
   plugins: [require('@tailwindcss/forms')],
   theme: {
     extend: {
