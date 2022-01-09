@@ -1,68 +1,37 @@
-import React from 'react';
-import { Link, graphql } from 'gatsby';
-import Layout from 'src/components/layouts';
-import {
-  Card,
-  CategoryLabel,
-  CardContent,
-  ArticleContent,
-  Details,
-  Headline,
-  Excerpt,
-  More,
-} from 'src/components/layouts/basecss';
-import { createLabel } from '../components/util';
+import React from 'react'
+import { useAllContentfulBlogPosts, useSiteMetadata } from '../hooks'
+import Layout from '../components/layout'
+import Card from '../components/card'
+import Button from '../components/button'
+import SEO from '../components/seo'
 
-export const query = graphql`
-  query {
-    allMdx(sort: { fields: frontmatter___date, order: DESC }) {
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            date(formatString: "MMMM DD, YYYY")
-            category
-            excerptText
-          }
-          fields {
-            slug
-            readingTime {
-              text
-            }
-          }
-        }
-      }
-    }
-  }
-`;
+function IndexPage() {
+  const { nodes } = useAllContentfulBlogPosts()
+  const { title } = useSiteMetadata()
 
-export default ({ data }) => {
   return (
     <Layout>
-      <ArticleContent>
-        {data.allMdx.edges.map(({ node }) => (
-          <Link
-            key={node.id}
-            to={node.fields.slug}
-            style={{ textDecoration: 'none' }}
-          >
+      <SEO
+        keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
+        title={title}
+      />
+      <main className="grid gap-12 grid-cols-cards">
+        {nodes.map((post) => (
+          <article key={post.contentful_id}>
             <Card>
-              <CategoryLabel label={createLabel(node.frontmatter.category)}>
-                {node.frontmatter.category}
-              </CategoryLabel>
-              <CardContent>
-                <Headline>{node.frontmatter.title}</Headline>
-                <Details>
-                  {node.frontmatter.date} &bull; {node.fields.readingTime.text}
-                </Details>
-                <Excerpt>{node.frontmatter.excerptText}</Excerpt>
-                <More />
-              </CardContent>
+              <Card.Category>{'General'}</Card.Category>
+              <div className="p-8">
+                <Card.Header>{post.title}</Card.Header>
+                <Card.Date>{post.createdAt}</Card.Date>
+                <Card.Excerpt>{post.excerpt}</Card.Excerpt>
+                <Button to={post.slug}>Read ⟶</Button>
+              </div>
             </Card>
-          </Link>
+          </article>
         ))}
-      </ArticleContent>
+      </main>
     </Layout>
-  );
-};
+  )
+}
+
+export default IndexPage

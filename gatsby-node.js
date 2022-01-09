@@ -1,44 +1,51 @@
-const path = require(`path`);
-const { createFilePath } = require(`gatsby-source-filesystem`);
+const path = require("path");
 
-exports.onCreateNode = ({ node, getNode, actions }) => {
-  const { createNodeField } = actions;
-
-  if (node.internal.type === `Mdx`) {
-    const slug = createFilePath({ node, getNode, basePath: `posts` });
-    createNodeField({
-      node,
-      name: `slug`,
-      value: slug,
-    });
-  }
-};
-
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
 
-  const result = await graphql(`
-    query {
-      allMdx {
-        edges {
-          node {
-            fields {
-              slug
-            }
+  // Define a template for blog post
+  const blogPost = path.resolve("./src/templates/blog-post.js");
+
+  const result = await graphql(
+    `
+      {
+        allContentfulBlogPost {
+          nodes {
+            slug
+            title
+            excerpt
           }
         }
       }
-    }
-  `);
-  result.data.allMdx.edges.forEach(({ node }) => {
-    createPage({
-      path: node.fields.slug,
-      component: path.resolve(`./src/templates/blog-post.js`),
-      context: {
-        // Data passed to context is available
-        // in page queries as GraphQL variables.
-        slug: node.fields.slug,
-      },
+    `
+  );
+
+  if (result.errors) {
+    reporter.panicOnBuild(
+      `There was an error loading your Contentful posts`,
+      result.errors
+    );
+    return;
+  }
+
+  const posts = result.data.allContentfulBlogPost.nodes;
+
+  // Create pages if posts exist along with previous and next context
+  if (posts.length > 0) {
+    posts.forEach((post, index) => {
+      const previousPostSlug = index === 0 ? null : posts[index - 1].slug;
+      const nextPostSlug =
+        index === posts.length - 1 ? null : posts[index + 1].slug;
+
+      createPage({
+        path: post.slug,
+        component: blogPost,
+        context: {
+          slug: post.slug,
+          previousPostSlug,
+          nextPostSlug,
+        },
+      });
     });
-  });
+  }
 };

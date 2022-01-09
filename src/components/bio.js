@@ -1,0 +1,42 @@
+import React from 'react'
+import { useSiteMetadata } from '../hooks/useSiteMetadata'
+import authorImage from '../images/ak.jpeg'
+
+function Bio() {
+  const {
+    author: { name },
+  } = useSiteMetadata()
+
+  return (
+    <div className="flex justify-center pb-10">
+      <img
+        className="rounded-full w-14 h-14 ring-jsdYellow ring-2"
+        src={authorImage}
+        alt={name}
+      />
+      <p className="text-white w-96 pl-4">
+        Personal blog of {name}. You can follow me on{' '}
+        <a
+          className="underline text-jsdYellow font-bold hover:no-underline"
+          href="https://twitter.com/js_designer006"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Twitter
+        </a>{' '}
+        or get in touch with me through my website at{' '}
+        <a
+          className="underline text-jsdYellow font-bold hover:no-underline"
+          href="https://asifkabani.com"
+          target="_blank"
+          rel="noreferrer"
+        >
+          asifkabani.com
+        </a>
+        .
+      </p>
+    </div>
+  )
+}
+
+export default Bio
