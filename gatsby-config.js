@@ -9,9 +9,7 @@ const fullConfig = resolveConfig(tailwindConfig)
 
 const contentfulConfig = {
   spaceId: process.env.CONTENTFUL_SPACE_ID,
-  accessToken:
-    process.env.CONTENTFUL_ACCESS_TOKEN ||
-    process.env.CONTENTFUL_DELIVERY_TOKEN,
+  accessToken: process.env.CONTENTFUL_DELIVERY_TOKEN,
 }
 
 if (process.env.CONTENTFUL_HOST) {
