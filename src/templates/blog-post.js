@@ -1,7 +1,3 @@
-/*eslint no-unused-vars: "off"*/
-/*eslint react/prop-types: "off"*/
-/*eslint react/display-name: "off"*/
-
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
