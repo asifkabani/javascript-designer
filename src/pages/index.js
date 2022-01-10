@@ -19,7 +19,7 @@ function IndexPage() {
         {nodes.map((post) => (
           <article key={post.contentful_id}>
             <Card>
-              <Card.Category>{'General'}</Card.Category>
+              <Card.Category>{post.category}</Card.Category>
               <div className="p-8">
                 <Card.Header>{post.title}</Card.Header>
                 <Card.Date>{post.createdAt}</Card.Date>

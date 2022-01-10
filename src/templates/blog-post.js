@@ -7,16 +7,10 @@ import Seo from '../components/seo'
 import Layout from '../components/layout'
 import CodeSnippet from '../components/code'
 
-const Bold = ({ children }) => (
-  <strong className="bg-gray-200">{children}</strong>
-)
-const Italic = ({ children }) => <em>{children}</em>
-const Underline = ({ children }) => <u>{children}</u>
-const Text = ({ children }) => <p className="text-xl">{children}</p>
-
 const options = {
   renderMark: {
-    [MARKS.BOLD]: (text) => <Bold>{text}</Bold>,
+    [MARKS.BOLD]: (text) => <strong>{text}</strong>,
+    [MARKS.ITALIC]: (text) => <em>{text}</em>,
   },
   renderNode: {
     [INLINES.HYPERLINK]: (node, children) => {
@@ -32,7 +26,7 @@ const options = {
       if (isMarkdown) {
         return <CodeSnippet markdown={node.content[0].value} />
       }
-      return <Text>{children}</Text>
+      return <p className="text-xl">{children}</p>
     },
     [BLOCKS.EMBEDDED_ENTRY]: (node, children) => {
       return (
@@ -112,6 +106,8 @@ export const pageQuery = graphql`
       contentful_id
       slug
       title
+      excerpt
+      category
       createdAt(formatString: "MMMM DD, YYYY")
       content {
         raw
