@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery } from 'gatsby'
 
 export const useAllContentfulBlogPosts = () => {
   const { allContentfulBlogPost } = useStaticQuery(
@@ -8,6 +8,7 @@ export const useAllContentfulBlogPosts = () => {
           nodes {
             slug
             title
+            category
             excerpt
             createdAt(formatString: "MMMM DD, YYYY")
             contentful_id
@@ -18,7 +19,7 @@ export const useAllContentfulBlogPosts = () => {
         }
       }
     `
-  );
+  )
 
-  return allContentfulBlogPost;
-};
+  return allContentfulBlogPost
+}
