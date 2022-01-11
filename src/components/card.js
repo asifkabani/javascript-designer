@@ -1,14 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { createIcon } from '../util'
 
 function Header({ children }) {
   return <h3>{children}</h3>
 }
 
-function Category({ children }) {
+function Category({ bgColor, children }) {
+  const icon = createIcon(children)
+  // const bgColor = color === 'bg-yellow-400' || color
+  const textColor = bgColor === 'bg-yellow-400' ? 'text-base' : 'text-white'
+
   return (
-    <span className="text-white text-sm font-normal block rounded-t-md p-4 bg-green-600">
-      {children}
+    <span
+      className={`${textColor} flex items-center text-sm font-normal block rounded-t-md p-4 font-semibold tracking-wider ${bgColor}`}
+    >
+      {icon}
+      {children.toUpperCase()}
     </span>
   )
 }

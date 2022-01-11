@@ -1,5 +1,6 @@
 import React from 'react'
 import { useAllContentfulBlogPosts, useSiteMetadata } from '../hooks'
+import { createLabel, createIcon } from '../util'
 import Layout from '../components/layout'
 import Card from '../components/card'
 import Button from '../components/button'
@@ -19,7 +20,9 @@ function IndexPage() {
         {nodes.map((post) => (
           <article key={post.contentful_id}>
             <Card>
-              <Card.Category>{post.category}</Card.Category>
+              <Card.Category bgColor={createLabel(post.category)}>
+                {post.category}
+              </Card.Category>
               <div className="p-8">
                 <Card.Header>{post.title}</Card.Header>
                 <Card.Date>{post.createdAt}</Card.Date>
