@@ -3,12 +3,11 @@ import PropTypes from 'prop-types'
 import { createIcon } from '../util'
 
 function Header({ children }) {
-  return <h3>{children}</h3>
+  return <h3 className="mb-5">{children}</h3>
 }
 
 function Category({ bgColor, children }) {
   const icon = createIcon(children)
-  // const bgColor = color === 'bg-yellow-400' || color
   const textColor = bgColor === 'bg-yellow-400' ? 'text-base' : 'text-white'
 
   return (
@@ -50,6 +49,7 @@ Header.propTypes = {
 }
 Category.propTypes = {
   children: PropTypes.node.isRequired,
+  bgColor: PropTypes.string,
 }
 
 Date.propTypes = {
