@@ -28,14 +28,14 @@ if (!spaceId || !accessToken) {
 module.exports = {
   siteMetadata: {
     title: `JavaScript Designer`,
-    description: 'Personal blog of Asif Kabani.',
+    description: 'Personal blog of Asif Kabani',
     author: {
       name: 'Asif Kabani',
     },
     siteUrl: `https://javascriptdesigner.com/`,
     social: {
       email: 'hello@javascriptdesigner.com',
-      twitter: `js_designer006`,
+      twitter: `@js_designer006`,
     },
   },
   plugins: [

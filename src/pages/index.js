@@ -8,15 +8,12 @@ import SEO from '../components/seo'
 
 function IndexPage() {
   const { nodes } = useAllContentfulBlogPosts()
-  const { title } = useSiteMetadata()
+  const { title, description } = useSiteMetadata()
 
   return (
     <Layout>
-      <SEO
-        keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
-        title={title}
-      />
-      <main className="grid gap-12 grid-cols-cards">
+      <SEO title={title} description={description} />
+      <main className="grid grid-cols-cards gap-12">
         {nodes.map((post) => (
           <article key={post.contentful_id}>
             <Card>

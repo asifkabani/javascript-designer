@@ -1,6 +1,6 @@
-import React from "react";
-import Logo from "./logo";
-import Bio from "./bio";
+import React from 'react'
+import Logo from './logo'
+import Bio from './bio'
 
 function Header() {
   return (
@@ -8,7 +8,7 @@ function Header() {
       <Logo />
       <Bio />
     </header>
-  );
+  )
 }
 
-export default Header;
+export default Header

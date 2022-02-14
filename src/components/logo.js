@@ -9,10 +9,10 @@ function Logo() {
 
   return (
     <Link to="/">
-      <h1 className="font-josefinSans font-medium text-jsdYellow text-6xl inline-block leading-3 tracking-tighter pt-10">
+      <h1 className="inline-block pt-10 font-josefinSans text-6xl font-medium leading-3 tracking-tighter text-jsdYellow">
         {mainText}
         <br />
-        <span className="font-mrDafoe text-white text-6xl inline-block pb-10">
+        <span className="inline-block pb-10 font-mrDafoe text-6xl text-white">
           {secondaryText}
         </span>
       </h1>
