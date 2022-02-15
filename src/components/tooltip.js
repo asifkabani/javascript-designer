@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactTooltip from 'react-tooltip';
+import React from 'react'
+import ReactTooltip from 'react-tooltip'
 
 export default ({ title, children }) => {
   return (
@@ -13,5 +13,5 @@ export default ({ title, children }) => {
       </a>
       <ReactTooltip globalEventOff="click" />
     </div>
-  );
-};
+  )
+}

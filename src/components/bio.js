@@ -10,14 +10,14 @@ function Bio() {
   return (
     <div className="flex justify-center pb-10">
       <img
-        className="rounded-full w-14 h-14 ring-jsdYellow ring-2"
+        className="h-14 w-14 rounded-full ring-2 ring-jsdYellow"
         src={authorImage}
         alt={name}
       />
-      <p className="text-white w-96 pl-4">
+      <p className="w-96 pl-4 text-white">
         Personal blog of {name}. You can follow me on{' '}
         <a
-          className="underline text-jsdYellow font-bold hover:no-underline"
+          className="font-bold text-jsdYellow underline hover:no-underline"
           href="https://twitter.com/js_designer006"
           target="_blank"
           rel="noreferrer"
@@ -26,7 +26,7 @@ function Bio() {
         </a>{' '}
         or get in touch with me through my website at{' '}
         <a
-          className="underline text-jsdYellow font-bold hover:no-underline"
+          className="font-bold text-jsdYellow underline hover:no-underline"
           href="https://asifkabani.com"
           target="_blank"
           rel="noreferrer"

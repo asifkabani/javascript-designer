@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react'
 
-import Layout from "../components/layout";
+import Layout from '../components/layout'
 // import SEO from "../components/seo";
 
 function ContactPage() {
@@ -27,54 +27,54 @@ function ContactPage() {
           </h2>
 
           <label
-            className="block mb-2 text-xs font-bold uppercase"
+            className="mb-2 block text-xs font-bold uppercase"
             htmlFor="first-name"
           >
             First Name
           </label>
 
           <input
-            className="w-full mb-6 rounded-md border-gray-800"
+            className="mb-6 w-full rounded-md border-gray-800"
             id="first-name"
             placeholder="Bill"
             type="text"
           />
 
           <label
-            className="block mb-2 text-xs font-bold uppercase"
+            className="mb-2 block text-xs font-bold uppercase"
             htmlFor="last-name"
           >
             Last Name
           </label>
 
           <input
-            className="w-full mb-6 rounded-md border-gray-800"
+            className="mb-6 w-full rounded-md border-gray-800"
             id="last-name"
             placeholder="Murray"
             type="text"
           />
 
           <label
-            className="block mb-2 text-xs font-bold uppercase"
+            className="mb-2 block text-xs font-bold uppercase"
             htmlFor="message"
           >
             Message
           </label>
 
           <textarea
-            className="w-full mb-6 rounded-md border-gray-800"
+            className="mb-6 w-full rounded-md border-gray-800"
             id="message"
             placeholder="Say something..."
             rows="8"
           />
 
-          <button className="px-4 py-2 text-sm font-bold text-white bg-gray-700 border-b-4 border-gray-800 rounded hover:border-gray-700 hover:bg-gray-600">
+          <button className="rounded border-b-4 border-gray-800 bg-gray-700 px-4 py-2 text-sm font-bold text-white hover:border-gray-700 hover:bg-gray-600">
             Submit
           </button>
         </form>
       </section>
     </Layout>
-  );
+  )
 }
 
-export default ContactPage;
+export default ContactPage

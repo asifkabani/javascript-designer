@@ -1,4 +1,4 @@
-import { useAllContentfulBlogPosts } from "./useAllContentfulBlogPosts";
-import { useSiteMetadata } from "./useSiteMetadata";
+import { useAllContentfulBlogPosts } from './useAllContentfulBlogPosts'
+import { useSiteMetadata } from './useSiteMetadata'
 
-export { useAllContentfulBlogPosts, useSiteMetadata };
+export { useAllContentfulBlogPosts, useSiteMetadata }

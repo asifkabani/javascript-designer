@@ -1,10 +1,10 @@
-import { createMuiTheme } from "@material-ui/core";
+import { createMuiTheme } from '@material-ui/core'
 
 const theme = createMuiTheme({
   palette: {
     type: 'dark',
   },
-});
+})
 
 // const theme = {
 //   gray: '#4c4c4c',
@@ -15,4 +15,4 @@ const theme = createMuiTheme({
 //   font: 'Josefin Sans, sans-serif',
 // };
 
-export default theme;
+export default theme

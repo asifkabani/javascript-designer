@@ -12,7 +12,7 @@ function Category({ bgColor, children }) {
 
   return (
     <span
-      className={`${textColor} flex items-center text-sm font-normal block rounded-t-md p-4 font-semibold tracking-wider ${bgColor}`}
+      className={`${textColor} block flex items-center rounded-t-md p-4 text-sm font-normal font-semibold tracking-wider ${bgColor}`}
     >
       {icon}
       {children.toUpperCase()}
@@ -22,19 +22,19 @@ function Category({ bgColor, children }) {
 
 function Date({ children }) {
   return (
-    <span className="block mb-5 text-sm font-semibold text-gray-500 uppercase tracking-wider leading-3">
+    <span className="mb-5 block text-sm font-semibold uppercase leading-3 tracking-wider text-gray-500">
       {children}
     </span>
   )
 }
 
 function Excerpt({ children }) {
-  return <p className="text-gray-500 mb-10 text-xl">{children}</p>
+  return <p className="mb-10 text-xl text-gray-500">{children}</p>
 }
 
 function Card({ children }) {
   return (
-    <article className="bg-white rounded-md shadow-lg transition-shadow hover:shadow-2xl">
+    <article className="rounded-md bg-white shadow-lg transition-shadow hover:shadow-2xl">
       {children}
     </article>
   )

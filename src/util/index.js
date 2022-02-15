@@ -32,13 +32,31 @@ export function createIcon(category) {
   let icon
   switch (category) {
     case 'HTML':
-      icon = <Html5PlainIcon style={{marginRight: '0.5rem'}} color="#FFF" size={'1.5em'} />
+      icon = (
+        <Html5PlainIcon
+          style={{ marginRight: '0.5rem' }}
+          color="#FFF"
+          size={'1.5em'}
+        />
+      )
       break
     case 'CSS':
-      icon = <Css3PlainIcon style={{marginRight: '0.5rem'}} color="#FFF" size={'1.5em'} />
+      icon = (
+        <Css3PlainIcon
+          style={{ marginRight: '0.5rem' }}
+          color="#FFF"
+          size={'1.5em'}
+        />
+      )
       break
     case 'JavaScript':
-      icon = <JavascriptPlainIcon style={{marginRight: '0.5rem'}} color="#000" size={'1.5em'} />
+      icon = (
+        <JavascriptPlainIcon
+          style={{ marginRight: '0.5rem' }}
+          color="#000"
+          size={'1.5em'}
+        />
+      )
       break
 
     default:
