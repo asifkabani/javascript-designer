@@ -66,19 +66,19 @@ function BlogPostTemplate({ data }) {
         {createdAt}
       </span>
       <div>{content && renderRichText(content, options)}</div>
-      <div>
+      <div className='mt-12'>
         {(previous || next) && (
           <nav>
-            <ul>
+            <ul className='flex flex-wrap justify-between ml-0'>
               {previous && (
-                <li>
+                <li className='list-none text-blue-700 underline hover:no-underline'>
                   <Link to={'/' + previous.slug} rel="prev">
                     ← {previous.title}
                   </Link>
                 </li>
               )}
               {next && (
-                <li>
+                <li className='list-none text-blue-700 underline hover:no-underline'>
                   <Link to={'/' + next.slug} rel="next">
                     {next.title} →
                   </Link>
