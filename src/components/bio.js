@@ -8,9 +8,9 @@ function Bio() {
   } = useSiteMetadata()
 
   return (
-    <div className="flex justify-center pb-10">
+    <div className="flex justify-center flex-col items-center md:flex-row pb-10">
       <img
-        className="h-14 w-14 rounded-full ring-2 ring-jsdYellow"
+        className="h-14 w-14 mb-4 md:mb-auto rounded-full ring-2 ring-jsdYellow"
         src={authorImage}
         alt={name}
       />
