@@ -12,7 +12,7 @@ function Category({ bgColor, children }) {
 
   return (
     <span
-      className={`${textColor} block flex items-center rounded-t-md p-4 text-sm font-normal font-semibold tracking-wider ${bgColor}`}
+      className={`${textColor} flex items-center rounded-t-md p-4 text-sm font-semibold tracking-wider ${bgColor}`}
     >
       {icon}
       {children.toUpperCase()}
