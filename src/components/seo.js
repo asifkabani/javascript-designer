@@ -4,11 +4,8 @@ import { Helmet } from 'react-helmet'
 
 function SEO({ description, title }) {
   return (
-    <Helmet>
+    <Helmet title={`${title} | ${description}`}>
       <html lang="en" />
-      <title>
-        {title} | {description}
-      </title>
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />

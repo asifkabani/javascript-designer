@@ -1,6 +1,6 @@
 import React from 'react'
 import { useAllContentfulBlogPosts, useSiteMetadata } from '../hooks'
-import { createLabel, createIcon } from '../util'
+import { createLabel } from '../util'
 import Layout from '../components/layout'
 import Card from '../components/card'
 import Button from '../components/button'

@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import { BLOCKS, MARKS, INLINES } from '@contentful/rich-text-types'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
-// import SEO from '../components/seo'
+import { useSiteMetadata } from '../hooks'
+import SEO from '../components/seo'
 import Layout from '../components/layout'
 import CodeSnippet from '../components/code'
 
@@ -52,13 +53,14 @@ const options = {
 }
 
 function BlogPostTemplate({ data }) {
+  const { title: siteTitle } = useSiteMetadata()
   const { title, createdAt, content } = data.contentfulBlogPost
   const previous = data.previous
   const next = data.next
 
   return (
     <Layout>
-      {/* <SEO title={title} /> */}
+      <SEO title={`${title} | ${siteTitle}`} />
       <h1>{title}</h1>
       <span className="mb-5 block text-sm font-semibold uppercase leading-3 tracking-wider text-gray-500">
         {createdAt}
