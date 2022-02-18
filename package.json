@@ -23,7 +23,7 @@
     "gatsby-source-contentful": "^7.5.0",
     "gatsby-transformer-remark": "^5.7.0",
     "markdown-it": "^12.3.2",
-    "prismjs": "^1.26.0",
+    "prismjs": "^1.27.0",
     "prop-types": "15.8.1",
     "react": "17.0.2",
     "react-devicons": "^2.14.0",
