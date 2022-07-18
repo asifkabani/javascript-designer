@@ -54,7 +54,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.17.2",
-    "@babel/eslint-parser": "^7.17.0",
+    "@babel/eslint-parser": "^7.18.9",
     "@tailwindcss/forms": "0.4.0",
     "autoprefixer": "^10.4.2",
     "cssnano": "5.0.17",
