@@ -4,7 +4,7 @@
   "version": "5.0.0",
   "author": "Asif Kabani <hello@javascriptdesigner.com>",
   "dependencies": {
-    "@contentful/rich-text-types": "^15.11.1",
+    "@contentful/rich-text-types": "^16.0.2",
     "@fontsource/inter": "^4.5.4",
     "@fontsource/josefin-sans": "^4.5.4",
     "@fontsource/mr-dafoe": "^4.5.1",
