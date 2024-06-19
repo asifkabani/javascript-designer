@@ -4,7 +4,7 @@ import { createLabel } from '../util'
 import Layout from '../components/layout'
 import Card from '../components/card'
 import Button from '../components/button'
-import SEO from '../components/seo'
+import Head from '../components/seo'
 
 function IndexPage() {
   const { nodes } = useAllContentfulBlogPosts()
@@ -12,7 +12,7 @@ function IndexPage() {
 
   return (
     <Layout>
-      <SEO title={title} description={description} />
+      <Head title={title} description={description} />
       <main className="grid grid-cols-cards gap-12">
         {nodes.map((post) => (
           <article key={post.contentful_id}>
