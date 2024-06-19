@@ -39,8 +39,6 @@ module.exports = {
     },
   },
   plugins: [
-    // `gatsby-plugin-eslint`,
-    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-offline`,
